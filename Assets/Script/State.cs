@@ -11,7 +11,15 @@ public class State : MonoBehaviour
     public int mental_1;
     public int mental_2;
     public int mental_3;
+    public TextMesh txt;
+    public TextMesh name_txt;
+    public GameObject outline_tiara;
+    public GameObject outline_stan;
+    public GameObject outline_olibia;
 
+    private bool choose_stu;
+    private int year;
+    private int month;
     private void Start()
     {
         friendship_1 = 60;
@@ -21,14 +29,72 @@ public class State : MonoBehaviour
         mental_2 = 30;
         mental_3 = 70;
         join_student = 1; //0으로 수정
+        year = 2022;
+        month = 3;
+        choose_stu = true;  //false로 변경
+        txt.text = year + "Y " + month + "M";
     }
     private void Update()
     {
         Limit_sensor();
+        if (choose_stu)
+        {
+            name_txt.text = "상담할 사람을 골라주세요";
+            RaycastHit hitInfo = new RaycastHit();
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo))
+                {
+                    outline_tiara.SetActive(false);
+                    outline_stan.SetActive(false);
+                    outline_olibia.SetActive(false);
+                    switch (hitInfo.transform.tag)
+                    {
+                        case "tiara":
+                            join_student = 1;
+                            choose_stu = false;
+
+                            break;
+                        case "stan":
+                            join_student = 2;
+                            choose_stu = false;
+                            break;
+                        case "olibia":
+                            join_student = 3;
+                            choose_stu = false;
+                            break;
+                    }
+                }
+            }
+            else
+            {
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo))
+                {
+                    switch (hitInfo.transform.tag)
+                    {
+                        case "tiara":
+                            outline_tiara.SetActive(true);
+                            break;
+                        case "stan":
+                            outline_stan.SetActive(true);
+                            break;
+                        case "olibia":
+                            outline_olibia.SetActive(true);
+                            break;
+                        default:
+                            outline_tiara.SetActive(false);
+                            outline_stan.SetActive(false);
+                            outline_olibia.SetActive(false);
+                            break;
+                    }
+                }
+            }
+        }
+
     }
     public void Friendship_add(int value)
     {
-        switch(join_student)
+        switch (join_student)
         {
             case 1:
                 friendship_1 += value;
@@ -39,7 +105,7 @@ public class State : MonoBehaviour
             case 3:
                 friendship_3 += value;
                 break;
-        }    
+        }
     }
     public void Mental_add(int value)
     {
@@ -70,5 +136,15 @@ public class State : MonoBehaviour
             mental_2 = 100;
         else if (mental_3 > 100)
             mental_3 = 100;
+    }
+    public void Date_add()
+    {
+        month++;
+        if (month >= 13)
+        {
+            year++;
+            month = 1;
+        }
+        txt.text = year + "Y " + month + "M";
     }
 }
