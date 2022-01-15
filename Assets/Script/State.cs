@@ -16,83 +16,128 @@ public class State : MonoBehaviour
     public GameObject outline_tiara;
     public GameObject outline_stan;
     public GameObject outline_olibia;
+    public GameObject move_camera;
+    public GameObject human1;
+    public GameObject human2;
+    public GameObject human3;
 
-    private bool choose_stu;
+
+    public bool choose_stu;
+    public int tiara_ending;
+    public int stan_ending;
+    public int olivia_ending;
+    private bool first;
     private int year;
     private int month;
     private void Start()
     {
+        first = true;
         friendship_1 = 30;
         friendship_2 = 30;
-        friendship_3 = 30;
+        friendship_3 = 20;
         mental_1 = 30;
         mental_2 = 30;
-        mental_3 = 30;
-        join_student = 1; //0으로 수정
+        mental_3 = 35;
+        join_student = 3;
         year = 2022;
         month = 3;
-        choose_stu = true;  //false로 변경
         txt.text = year + "Y " + month + "M";
     }
     private void Update()
     {
         Limit_sensor();
-        if (choose_stu)
+        if (first)
         {
-            name_txt.text = "상담할 사람을 골라주세요";
-            RaycastHit hitInfo = new RaycastHit();
-            if (Input.GetMouseButtonDown(0))
+            
+            first = false;
+            choose_stu = false;
+        }
+        else
+        {
+            if (choose_stu)
             {
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo))
+                RaycastHit hitInfo = new RaycastHit();
+                if (Input.GetMouseButtonDown(0))
                 {
-                    outline_tiara.SetActive(false);
-                    outline_stan.SetActive(false);
-                    outline_olibia.SetActive(false);
-                    switch (hitInfo.transform.tag)
+                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo))
                     {
-                        case "tiara":
-                            join_student = 1;
-                            choose_stu = false;
-                            name_txt.text = "오늘의 상담\n티아라 카터";
-                            break;
-                        case "stan":
-                            join_student = 2;
-                            choose_stu = false;
-                            name_txt.text = "오늘의 상담\n스텐 리";
-                            break;
-                        case "olibia":
-                            join_student = 3;
-                            choose_stu = false;
-                            name_txt.text = "오늘의 상담\n올리비아 영";
-                            break;
+                        outline_tiara.SetActive(false);
+                        outline_stan.SetActive(false);
+                        outline_olibia.SetActive(false);
+                        switch (hitInfo.transform.tag)
+                        {
+                            case "tiara":
+                                if(friendship_1 > 10 && mental_1 > 10)
+                                {
+                                    join_student = 1;
+                                    choose_stu = false;
+                                    name_txt.text = "오늘의 상담\n티아라 카터";
+                                    human1.SetActive(true);
+                                    human2.SetActive(false);
+                                    human3.SetActive(false);
+                                    move_camera.GetComponent<Move_camera>().Move_camera_();
+                                }
+                                else
+                                    name_txt.text = "티아라 카터가\n상담을 거부합니다.";
+                                break;
+                            case "stan":
+                                if (friendship_2 > 10 && mental_2 > 10)
+                                {
+                                    join_student = 2;
+                                    choose_stu = false;
+                                    name_txt.text = "오늘의 상담\n스텐 리";
+                                    human1.SetActive(false);
+                                    human2.SetActive(true);
+                                    human3.SetActive(false);
+                                    move_camera.GetComponent<Move_camera>().Move_camera_();
+                                }
+                                else
+                                    name_txt.text = "스텐 리가\n상담을 거부합니다.";
+                                break;
+                            case "olibia":
+                                if (friendship_3 > 10 && mental_3 > 10)
+                                {
+                                    join_student = 3;
+                                    choose_stu = false;
+                                    name_txt.text = "오늘의 상담\n올리비아 영";
+                                    human1.SetActive(false);
+                                    human2.SetActive(false);
+                                    human3.SetActive(true);
+                                    move_camera.GetComponent<Move_camera>().Move_camera_();
+                                }
+                                else if(GetComponent<Talk>().olivia > 30)
+                                    name_txt.text = "올리비아 영은\n상담이 필요 없습니다.";
+                                else
+                                    name_txt.text = "올리비아 영이\n상담을 거부합니다.";
+                                break;
+                        }
                     }
                 }
-            }
-            else
-            {
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo))
+                else
                 {
-                    switch (hitInfo.transform.tag)
+                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo))
                     {
-                        case "tiara":
-                            outline_tiara.SetActive(true);
-                            break;
-                        case "stan":
-                            outline_stan.SetActive(true);
-                            break;
-                        case "olibia":
-                            outline_olibia.SetActive(true);
-                            break;
-                        default:
-                            outline_tiara.SetActive(false);
-                            outline_stan.SetActive(false);
-                            outline_olibia.SetActive(false);
-                            break;
+                        switch (hitInfo.transform.tag)
+                        {
+                            case "tiara":
+                                outline_tiara.SetActive(true);
+                                break;
+                            case "stan":
+                                outline_stan.SetActive(true);
+                                break;
+                            case "olibia":
+                                outline_olibia.SetActive(true);
+                                break;
+                            default:
+                                outline_tiara.SetActive(false);
+                                outline_stan.SetActive(false);
+                                outline_olibia.SetActive(false);
+                                break;
+                        }
                     }
                 }
             }
         }
-
     }
     public void Friendship_add(int value)
     {
@@ -148,5 +193,26 @@ public class State : MonoBehaviour
             month = 1;
         }
         txt.text = year + "Y " + month + "M";
+    }
+    public void Human_1()
+    {
+        human1.gameObject.SetActive(true);
+        human2.gameObject.SetActive(false);
+        human3.gameObject.SetActive(false);
+        join_student = 1;
+    }
+    public void Human_2()
+    {
+        human1.gameObject.SetActive(false);
+        human2.gameObject.SetActive(true);
+        human3.gameObject.SetActive(false);
+        join_student = 2;
+    }
+    public void Human_3()
+    {
+        human1.gameObject.SetActive(false);
+        human2.gameObject.SetActive(false);
+        human3.gameObject.SetActive(true);
+        join_student = 3;
     }
 }

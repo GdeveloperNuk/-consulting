@@ -12,6 +12,9 @@ TagManager:
   - tomorrow_button
   - friendship_button
   - mental_button
+  - choose_1
+  - choose_2
+  - choose_3
   layers:
   - Default
   - TransparentFX

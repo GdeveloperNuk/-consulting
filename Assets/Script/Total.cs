@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Total : MonoBehaviour
 {
+    public Camera move_camera;
     public GameObject friendship_total;
     public GameObject mental_total;
     public GameObject main_player;
     public GameObject[] friendship;
     public GameObject[] mental;
+    public TextMesh name_txt;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -19,9 +21,13 @@ public class Total : MonoBehaviour
                 switch(hitInfo.transform.tag)
                 {
                     case "tomorrow_button":
+                        name_txt.text = "상담할 사람을 골라주세요";
+                        move_camera.transform.position = new Vector3(-1.31f, 2.510523f, -7.35f);
+                        move_camera.transform.localEulerAngles = new Vector3(0, -90, 0);
                         friendship_total.SetActive(false);
                         mental_total.SetActive(false);
-
+                        move_camera.gameObject.SetActive(true);
+                        this.gameObject.SetActive(false);
                         break;
                     case "friendship_button":
                         Friendship_test();
@@ -35,6 +41,14 @@ public class Total : MonoBehaviour
                         break;
                 }
             }
+        }
+    }
+    public void All_out()
+    {
+        for (int i = 0; i < 15; i++)
+        {
+            friendship[i].SetActive(false);
+            mental[i].SetActive(false);
         }
     }
     private void Friendship_test()
