@@ -16,34 +16,26 @@ public class State : MonoBehaviour
     public GameObject outline_tiara;
     public GameObject outline_stan;
     public GameObject outline_olibia;
-    public Transform cam;
-    public Transform targetCam;
 
-    private bool moveCheck;
     private bool choose_stu;
     private int year;
     private int month;
     private void Start()
     {
-        friendship_1 = 60;
-        friendship_2 = 40;
-        friendship_3 = 80;
-        mental_1 = 70;
+        friendship_1 = 30;
+        friendship_2 = 30;
+        friendship_3 = 30;
+        mental_1 = 30;
         mental_2 = 30;
-        mental_3 = 70;
+        mental_3 = 30;
         join_student = 1; //0으로 수정
         year = 2022;
         month = 3;
         choose_stu = true;  //false로 변경
-        moveCheck = false;
         txt.text = year + "Y " + month + "M";
     }
     private void Update()
     {
-        if (moveCheck)
-        {
-            CameraAni();
-        }
         Limit_sensor();
         if (choose_stu)
         {
@@ -62,19 +54,16 @@ public class State : MonoBehaviour
                             join_student = 1;
                             choose_stu = false;
                             name_txt.text = "오늘의 상담\n티아라 카터";
-                            moveCheck = true;
                             break;
                         case "stan":
                             join_student = 2;
                             choose_stu = false;
                             name_txt.text = "오늘의 상담\n스텐 리";
-                            moveCheck = true;
                             break;
                         case "olibia":
                             join_student = 3;
                             choose_stu = false;
                             name_txt.text = "오늘의 상담\n올리비아 영";
-                            moveCheck = true;
                             break;
                     }
                 }
@@ -137,18 +126,18 @@ public class State : MonoBehaviour
     }
     private void Limit_sensor()
     {
-        if (friendship_1 > 100)
-            friendship_1 = 100;
-        else if (friendship_2 > 100)
-            friendship_2 = 100;
-        else if (friendship_3 > 100)
-            friendship_3 = 100;
-        if (mental_1 > 100)
-            mental_1 = 100;
-        else if (mental_2 > 100)
-            mental_2 = 100;
-        else if (mental_3 > 100)
-            mental_3 = 100;
+        if (friendship_1 > 50)
+            friendship_1 = 50;
+        else if (friendship_2 > 50)
+            friendship_2 = 50;
+        else if (friendship_3 > 50)
+            friendship_3 = 50;
+        if (mental_1 > 50)
+            mental_1 = 50;
+        else if (mental_2 > 50)
+            mental_2 = 50;
+        else if (mental_3 > 50)
+            mental_3 = 50;
     }
     public void Date_add()
     {
@@ -159,15 +148,5 @@ public class State : MonoBehaviour
             month = 1;
         }
         txt.text = year + "Y " + month + "M";
-    }
-
-    public void CameraAni()
-    {
-        cam.position = Vector3.Lerp(transform.position, targetCam.position, Time.deltaTime * 0.01f);
-
-        if(cam.position == targetCam.position)
-        {
-            moveCheck = false;
-        }
     }
 }

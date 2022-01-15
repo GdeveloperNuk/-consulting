@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - olibia
+  - tiara
+  - stan
+  - Laser
+  - Enemy
+  - tomorrow_button
+  - friendship_button
+  - mental_button
   layers:
   - Default
   - TransparentFX
