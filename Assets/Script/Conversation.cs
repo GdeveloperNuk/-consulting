@@ -7,13 +7,12 @@ using UnityEngine.UI;
 public class Dialogue{
     [TextArea]
     public string dialogue;
+    public Color textColor;
 }
 public class Conversation : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer sprite_DialogueBox;
-    [SerializeField] private Text txt_Dialogue;
 
-    
+    [SerializeField] private TextMesh txt_Dialogue;
 
     private bool isDialogue = false;
 
@@ -34,7 +33,6 @@ public class Conversation : MonoBehaviour
 
     private void OnOffDialogue(bool _flag)
     {
-        sprite_DialogueBox.gameObject.SetActive(_flag);
         txt_Dialogue.gameObject.SetActive(_flag);
 
         isDialogue = _flag;
@@ -44,6 +42,7 @@ public class Conversation : MonoBehaviour
     private void NextDialogue()
     {
         txt_Dialogue.text = dialogue[count].dialogue;
+        txt_Dialogue.color = dialogue[count].textColor;
         count++;
     }
 
