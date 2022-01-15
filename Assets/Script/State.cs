@@ -16,7 +16,10 @@ public class State : MonoBehaviour
     public GameObject outline_tiara;
     public GameObject outline_stan;
     public GameObject outline_olibia;
+    public Transform cam;
+    public Transform targetCam;
 
+    private bool moveCheck;
     private bool choose_stu;
     private int year;
     private int month;
@@ -32,10 +35,15 @@ public class State : MonoBehaviour
         year = 2022;
         month = 3;
         choose_stu = true;  //false로 변경
+        moveCheck = false;
         txt.text = year + "Y " + month + "M";
     }
     private void Update()
     {
+        if (moveCheck)
+        {
+            CameraAni();
+        }
         Limit_sensor();
         if (choose_stu)
         {
@@ -53,15 +61,20 @@ public class State : MonoBehaviour
                         case "tiara":
                             join_student = 1;
                             choose_stu = false;
-
+                            name_txt.text = "오늘의 상담\n티아라 카터";
+                            moveCheck = true;
                             break;
                         case "stan":
                             join_student = 2;
                             choose_stu = false;
+                            name_txt.text = "오늘의 상담\n스텐 리";
+                            moveCheck = true;
                             break;
                         case "olibia":
                             join_student = 3;
                             choose_stu = false;
+                            name_txt.text = "오늘의 상담\n올리비아 영";
+                            moveCheck = true;
                             break;
                     }
                 }
@@ -146,5 +159,15 @@ public class State : MonoBehaviour
             month = 1;
         }
         txt.text = year + "Y " + month + "M";
+    }
+
+    public void CameraAni()
+    {
+        cam.position = Vector3.Lerp(transform.position, targetCam.position, Time.deltaTime * 0.01f);
+
+        if(cam.position == targetCam.position)
+        {
+            moveCheck = false;
+        }
     }
 }
