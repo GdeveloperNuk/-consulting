@@ -17,11 +17,9 @@ public class State : MonoBehaviour
     public GameObject outline_stan;
     public GameObject outline_olibia;
     public GameObject move_camera;
-    public Camera main_camera;
     public GameObject human1;
     public GameObject human2;
     public GameObject human3;
-    public Camera ending_camera;
 
 
     public bool choose_stu;
@@ -29,30 +27,28 @@ public class State : MonoBehaviour
     public int stan_ending;
     public int olivia_ending;
     private bool first;
-    public int year;
-    public int month;
+    private int year;
+    private int month;
     private void Start()
     {
         first = true;
         friendship_1 = 30;
-        friendship_2 = 15;
+        friendship_2 = 30;
         friendship_3 = 20;
         mental_1 = 30;
-        mental_2 = 25;
+        mental_2 = 30;
         mental_3 = 35;
-        join_student = 1;
+        join_student = 3;
         year = 2022;
         month = 3;
         txt.text = year + "Y " + month + "M";
     }
     private void Update()
     {
-        if (olivia_ending != 1 && (friendship_3 <= 20 || mental_3 <= 20))
-            olivia_ending = 1;
         Limit_sensor();
         if (first)
         {
-            Human_1();
+            
             first = false;
             choose_stu = false;
         }
@@ -60,8 +56,6 @@ public class State : MonoBehaviour
         {
             if (choose_stu)
             {
-                if ((friendship_1 <= 10 || mental_1 <= 10) && (friendship_2 <= 10 || mental_2 <= 10) && (friendship_3 <= 10 || mental_3 <= 10))
-                    End_s();
                 RaycastHit hitInfo = new RaycastHit();
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -97,8 +91,6 @@ public class State : MonoBehaviour
                                     human3.SetActive(false);
                                     move_camera.GetComponent<Move_camera>().Move_camera_();
                                 }
-                                else if(GetComponent<Talk>().stan > 65)
-                                    name_txt.text = "스탠 리은\n상담이 필요 없습니다.";
                                 else
                                     name_txt.text = "스텐 리가\n상담을 거부합니다.";
                                 break;
@@ -146,11 +138,6 @@ public class State : MonoBehaviour
                 }
             }
         }
-    }
-    private void End_s()
-    {
-        ending_camera.gameObject.SetActive(true);
-        main_camera.gameObject.SetActive(false);
     }
     public void Friendship_add(int value)
     {

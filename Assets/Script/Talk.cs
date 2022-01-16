@@ -282,6 +282,7 @@ public class Talk : MonoBehaviour
                     talk.text = "";
                     mytalk.text = "그럼 주로 어떤걸 하며 시간을 보내지?";
                 }
+<<<<<<< HEAD
                 else if(tiara == 21)
                 {
                     talk.text = "그냥 뭐, 침대에 누워서 시간을 보내요. \n노래나 들으면서.";
@@ -756,6 +757,13 @@ public class Talk : MonoBehaviour
                     value2 = false;
                     Invoke("End_talk", 2.5f);
                 }
+=======
+
+            }
+            else if(GetComponent<State>().join_student == 2)
+            {
+
+>>>>>>> parent of 155aa7e (final)
             }
             else if(GetComponent<State>().join_student == 3)
             {
@@ -1123,8 +1131,13 @@ public class Talk : MonoBehaviour
                     mytalk.text = "멋있는 마음가짐이야. 앞으로도 그렇게만 하면 되겠는 걸.\n그리고 만약 후에 본 오디션에 떨어지더라도...";
                 }
                 else if (olivia == 45)
+<<<<<<< HEAD
                     mytalk.text = "너무 상심하지 마. 노력은 반드시 배신하지 않으니까,\n꼭 빛을 보게 될 걸.";
                 else if (olivia == 46)
+=======
+                    mytalk.text = "�ʹ� ������� ��. ����� �ݵ�� ������� �����ϱ�,\n�� ���� ���� �� ��.";
+                else if (olivia == 44)
+>>>>>>> parent of 155aa7e (final)
                 {
                     mytalk.text = "";
                     talk.text = "그래. 원래였으면 짜증 났을 말이긴 해도\n오늘은 좀 괜찮게 들리네. 응원 고마워.";
