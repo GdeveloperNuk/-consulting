@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -99,223 +99,697 @@ public class Talk : MonoBehaviour
             {
                 if (tiara == 1)
                 {
-                    talk.text = "";
+                    talk.text = "ì•ˆë…•í•˜ì„¸ìš”.";
                     mytalk.text = "";
                 }
-                if (tiara == 2)
+                else if (tiara == 2)
+                {
+                    talk.text = "";
+                    mytalk.text = "ë°˜ê°‘ë‹¤. í‹°ì•„ë¼ ì¹´í„°.";
+                }
+                else if(tiara == 3)
+                {
+                    talk.text = "í˜¹ì‹œ ì–¸ì œê¹Œì§€ ìƒë‹´í•˜ë ¤ë‚˜ìš”?";
+                    mytalk.text = "";
+                }
+                else if(tiara == 4)
+                {
+                    talk.text = "";
+                    mytalk.text = "ìŒ... ë¬¸ì œê°€ í•´ê²°ë ë•Œê¹Œì§€?";
+                }
+                else if(tiara == 5)
                 {
                     talk.text = "";
                     mytalk.text = "";
+                    choose_1.text = "1. í‹°ì•„ë¼ì¹´í„° ë¬´ìŠ¨ ê³ ë¯¼ì´ë¼ë„ ìˆëŠ”ê±°ì•¼?";
+                    choose_2.text = "2. ìš”ì¦˜ë”°ë¼ ì–¼êµ´ì´ ìš°ì¤‘ì¶©í•´ë³´ì´ëŠ”êµ¬ë‚˜. ëª¸ë„ ì¶• ëŠ˜ì–´ì ¸ìˆê³ .";
+                    choose_3.text = "3. ì™œ ìƒë‹´í•˜ê¸° ì‹«ì–´? í•˜ì§€ë§ˆ?";
+                    choose = true;
                 }
-                if (tiara == 3)
+                else if(tiara == 6)
+                {
+                    mytalk.text = "";
+                    choose_1.text = "";
+                    choose_2.text = "";
+                    choose_3.text = "";
+                    if (choose_num == 1)
+                    {
+                        talk.text = "ê³ ë¯¼ì´ì•¼ ë§ì£ , ê³ ë¯¼ì´ì•¼ ë§ì€ë°";
+                        GetComponent<State>().Mental_add(-5);
+                    }
+                    else if (choose_num == 2)
+                    {
+                        talk.text = "ì–´ì œ ì—„ë§ˆí•œí…Œ ë’¤ì§€ê²Œ í˜¼ë‚¬ê±°ë“ ìš”. \nì„±ì ì´ ì™œ ì´ ëª¨ì–‘ì´ëƒêµ¬ í•˜ë©´ì„œ.";
+                        GetComponent<State>().Friendship_add(5);
+                    }
+                    else if (choose_num == 3)
+                    {
+                        talk.text = "ë„¤, ê·¸ë§Œí•˜ì‹œì£ ";
+                        GetComponent<State>().Mental_add(-25);
+                    }
+                }
+                else if(tiara == 7)
+                {
+                    talk.text = "";
+                    if (choose_num == 1)
+                    {
+                        mytalk.text = "ì´ì•¼ê¸°í•˜ê¸°ëŠ” ì‹«êµ¬ë‚˜.";
+                    }
+                    else if (choose_num == 2)
+                    {
+                        mytalk.text = "ì—­ì‹œ. ê·¸ëŸ´ì¤„ ì•Œì•˜ë‹¨ë‹¤.";
+                    }
+                    else if (choose_num == 3)
+                    {
+                        mytalk.text = "ì–´ì–´?";
+                        value2 = false;
+                        Invoke("End_talk", 2.5f);
+                    }
+                }
+                else if(tiara == 8)
+                {
+                    talk.text = "";
+                    mytalk.text = "ë­, ì–´ì¨Œë“  ë‹´ì„ì„ ìƒë‹˜ì—ê²Œ ì—°ë½ì´ ì™”ë‹¨ë‹¤. \nì „êµ ìˆœìœ„ê¶Œì„ ì¡ì•„ë¨¹ì—ˆë˜ ë†ˆì´, ì™œ ê°‘ì‘ìŠ¤ë ˆ ì´ëŸ° ê¼´ì´ ë˜ë²„ë ¸ëŠ”ì§€. í•„íˆ ì¢€ ì•Œë ¤ë‹¬ë¼ê³  í•˜ì‹œë”ë¼.";
+                }
+                else if(tiara == 9)
+                {
+                    talk.text = "ì €ë„ ëª°ë¼ìš”. ê·¸ëƒ¥ ìš´ì´ ì¢€ ì•ˆì¢‹ì•˜ë˜ê±° ë¿ì´ë‹ˆê¹Œ.";
+                    mytalk.text = "";
+                }
+                else if(tiara == 10)
+                {
+                    talk.text = "";
+                    mytalk.text = "ì„ ìƒë‹˜ì€ ë§ ì•ˆí•´ë„ ë‹¤ ì•Œì•„. ì—°ì¸ì´ ìƒê¸´ê±°ì•¼?";
+                }
+                else if(tiara == 11)
+                {
+                    talk.text = "ê·¸ëŸ°ê±° ì•„ë‹ˆì—ìš”. ê·¸ë¦¬ê³  ë§Œì•½ \n'ì—°ì¸'ì´ ìƒê²¼ë‹¤ê³  í•œë“¤ë¬´ìŠ¨ ìƒê´€ì¸ë°ìš”? \nì—„ì—°í•œ ììœ ì£ .";
+                    mytalk.text = "";
+                }
+                else if(tiara == 12)
                 {
                     talk.text = "";
                     mytalk.text = "";
+            
+                    choose_1.text = "1. ì—°ì• ëŠ” ëŒ€í•™ê°€ì„œë„ ì¶©ë¶„íˆ í•  ìˆ˜ ìˆëŠ”ê±° ëª°ë¼? ì´ê±´ ì‹œê¸°ìƒì¡°ë€ë‹¤";
+                    choose_2.text = "2. ì˜ ìƒê°í•´ë´. ì§€ê¸ˆê°™ì´ ì¤‘ìš”í•œ ì‹œê¸°ì—, ì—°ì• ë¥¼ í•˜ëŠ”ê²Œ ë§ëŠ”ê±´ì§€.";
+                    choose_3.text = "3. ê·¸ë˜, ì„ ìƒë‹˜ì€ ì¹´í„°ê°€ ì˜í•˜ë¦¬ë¼ ë¯¿ì–´ ì˜ì‹¬ì¹˜ ì•ŠëŠ”ë‹¨ë‹¤.";
+                    choose = true;
+                    
                 }
-                if (tiara == 4)
+                else if(tiara == 13)
                 {
-                    talk.text = "";
                     mytalk.text = "";
-                }
-                if (tiara == 5)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 6)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 7)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 8)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 9)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 10)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 11)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 12)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 13)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 14)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 15)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 16)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 17)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 18)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 19)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 20)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 21)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 22)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 23)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 24)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 25)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 26)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 27)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 28)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 29)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 30)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 31)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 32)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 33)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 34)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 35)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
-                if (tiara == 36)
-                {
-                    talk.text = "";
-                    mytalk.text = "";
-                }
+                    choose_1.text = "";
+                    choose_2.text = "";
+                    choose_3.text = "";
+                    if (choose_num == 1)
+                    {
+                        talk.text = "ì •ë§, ì‹¤ë§ì¸ë°ìš”";
+                        GetComponent<State>().Mental_add(-25);
+                        value2 = false;
+                        Invoke("End_talk", 2.5f);
+                    }
+                    else if (choose_num == 2)
+                    {
+                        talk.text = "ì •ë§, ì‹¤ë§ì¸ë°ìš”";
+                        GetComponent<State>().Mental_add(-5);
+                        GetComponent<State>().Friendship_add(-5);
+                    }
+                    else if (choose_num == 3)
+                    {
+                        talk.text = "ë„¤, ê°ì‚¬í•´ìš”.";
+                            GetComponent<State>().Friendship_add(5);
 
+                    }
+                }
+                else if(tiara == 14)
+                {
+                    talk.text = "";
+                    mytalk.text = "ë‹¤ìŒë²ˆ ì‹œí—˜ì€ ë°˜ë“œì‹œ ì˜í•´ë‚´ì•¼ í•´. \nëŒ€í•™ ì§„í•™ì´ ì½”ì•ìœ¼ë¡œ ë‹¤ê°€ì˜¤ê³  ë§ì•˜ìœ¼ë‹ˆê¹Œ";
+                }
+                else if(tiara == 15)
+                {
+                    talk.text = "ì•Œì•„ìš”. ê±±ì •í•˜ì§€ ë§ˆì„¸ìš”.";
+                    mytalk.text = "";
+                    value2 = false;
+                    Invoke("End_talk", 2.5f);
+                }
+                else if(tiara == 16)
+                {
+                    talk.text = "";
+                    mytalk.text = "ìš”ì¦˜ í•˜ë£¨ëŠ” ì–´ë– ë‹ˆ? \nì´ì œ ë§‰ ì‹œí—˜ì´ ëë‚¬ìœ¼ë‹ˆê¹Œ, ì¡°ê¸ˆ ë§˜í¸íˆ ì§€ë‚´ë„ ê´œì°®ë‹¨ë‹¤.";
+                }
+                else if(tiara == 17)
+                {
+                    talk.text = "ì´ë¥¼í…Œë©´ìš”?";
+                    mytalk.text = "";
+                }
+                else if(tiara == 18)
+                {
+                    talk.text = "";
+                    mytalk.text = "";
+                    choose_1.text = "1. ì¹œêµ¬ë“¤ê³¼ ê´‘ë€ì˜ íŒŒí‹°ë¥¼ ë³´ë‚¸ë‹¤ë˜ì§€.";
+                    choose_3.text = "2. ì—°ì¸ê³¼ ëœ¨ê±°ìš´ í•˜ë£¨ë¥¼ ë³´ë‚¸ë‹¤ë˜ì§€.";
+                    choose = true;
+                }
+                else if(tiara == 19)
+                {
+                    choose_1.text = "";
+                    choose_2.text = "";
+                    choose_3.text = "";
+                    mytalk.text = "";
+                    if(choose_num == 1)
+                    {
+                        GetComponent<State>().Friendship_add(-5);
+                    }
+                    else
+                    {
+                        GetComponent<State>().Friendship_add(-10);
+                    }
+                    if (GetComponent<State>().friendship_1 >= 30)
+                    {
+                        talk.text = "ì†”ì§íˆ ë§í•´ì„œ ê·¸ëŸ¬ê³  ì‹¶ì€ë°. \nê·¸ëŸ¬ì§ˆ ëª»í•  ë¿ì´ì£ .";
+                    }
+                    else
+                    {
+                        talk.text = "ê·¸ëŸ¬ê³  ì‹¶ì€ ê¸°ë¶„ ì•„ë‹ˆì—ìš”. \nê·¸ë¦¬ê³  ì € ì¹œêµ¬ ì—†ì–´ìš”. ë‹¨ í•œëª…ë„.";
+                    }
+                    
+                }
+                else if(tiara == 20)
+                {
+                    talk.text = "";
+                    mytalk.text = "ê·¸ëŸ¼ ì£¼ë¡œ ì–´ë–¤ê±¸ í•˜ë©° ì‹œê°„ì„ ë³´ë‚´ì§€?";
+                }
+                else if(tiara == 21)
+                {
+                    talk.text = "ê·¸ëƒ¥ ë­, ì¹¨ëŒ€ì— ëˆ„ì›Œì„œ ì‹œê°„ì„ ë³´ë‚´ìš”. \në…¸ë˜ë‚˜ ë“¤ìœ¼ë©´ì„œ.";
+                    mytalk.text = "";
+                }
+                else if(tiara == 22)
+                {
+                    talk.text = "";
+                    mytalk.text = "ì£¼ë¡œ ë¬´ìŠ¨ ë…¸ë˜ë¥¼ ë“£ëŠ”ë°?";
+                }
+                else if(tiara == 23)
+                {
+                    talk.text = "ìš”ì¦˜ì€ ë¹„í‹€ì¦ˆì˜ \n<Don't Let Me Down>ì„ ë“¤ì–´ìš”. \në¬´ìŠ¨ ë…¸ë˜ì¸ì¤„ ì•„ì„¸ìš”?";
+                    mytalk.text = "";
+                }
+                else if(tiara == 24)
+                {
+                    talk.text = "";
+                    mytalk.text = "";
+                    choose_1.text = "( ëª¨ë¥¸ë‹¤ !)";
+                    choose_3.text = "( ì•ˆë‹¤ !)";
+                    choose = true;
+                }
+                else if(tiara == 25)
+                {
+                    talk.text = "";
+                    choose_1.text = "";
+                    choose_2.text = "";
+                    choose_3.text = "";
+                    if (choose_num == 1)
+                    {
+                        mytalk.text = "ì, ì˜ ì•Œì§€ ìœ ëª…í•œ ë…¸ë˜ì–ì•„. ";
+                    }
+                    else if(choose_num == 3)
+                    {
+                        mytalk.text = "ì¡´ì˜ ì´ì•¼ê¸°ê°€ í•¨ì¶•ì ìœ¼ë¡œ ë‹´ê²¨ìˆëŠ” ë…¸ë˜. ë§ì§€?";
+                    }
+                }
+                else if(tiara == 26)
+                {
+                    mytalk.text = "";
+                    if (choose_num == 1)
+                    {
+                        talk.text = "ë„¤, ìœ ëª…í•˜ì£ . \nê·¸ëŸ°ë° ì˜ ëª¨ë¥´ì‹œëŠ” ê²ƒ ê°™ì•„ìš”. ";
+                        GetComponent<State>().Friendship_add(-5);
+                    }
+                    else if (choose_num == 3)
+                    {
+                        talk.text = "ë§ì•„ìš”, ì˜ ì•„ì‹œë„¤ìš”. \nì•„ì£¼ ì• ì ˆí•œ ê°ì •ì´ ì˜ ë“œëŸ¬ë‚˜ì£ .";
+                        GetComponent<State>().Mental_add(5);
+                    }
+                }
+                else if(tiara == 27)
+                {
+                    talk.text = "";
+                    if (choose_num == 1)
+                    {
+                        mytalk.text = "ë“¤ì¼°êµ¬ë‚˜. ";
+                        value2 = false;
+                        Invoke("End_talk", 2.5f);
+                    }
+                    else if (choose_num == 3)
+                    {
+                        mytalk.text = "í•œë•Œ ì„ ìƒë‹˜ë„ ë§ì´ ë“¤ì—ˆë‹¨ë‹¤.";
+                        value2 = false;
+                        Invoke("End_talk", 2.5f);
+                    }
+                }
+                else if(tiara == 28)
+                {
+                    mytalk.text = "";
+                    if(GetComponent<State>().mental_1 >= 30)
+                    {
+                        talk.text = "ì„ ìƒë‹˜, ì € ì‚¬ì‹¤ ê³ ë¯¼ì´ ìˆëŠ”ë°ìš”. \nì§„ì§œ ì•„ë¬´í•œí…Œë„ ë§í•˜ì‹œë©´ ì•ˆë¼ìš”.";
+                    }
+                    else
+                    {
+                        talk.text = "ì €... ì‚¬ì‹¤ì€ìš”. ê·¸... ë­ë¼ê³ ë‚˜ í• ê¹Œ...";
+                    }
+                }
+                else if(tiara == 29)
+                {
+                    talk.text = "";
+                    mytalk.text = "";
+                    choose_1.text = "1. í˜¹ì‹œ ì„± ì •ì²´ì„±ì— ê´€ë ¨ëœ ê³ ë¯¼ì´ë‹ˆ? ë¶€ë‹´ì—†ì´ ë§í•´ë³´ë ¤êµ¬ë‚˜. ì„ ìƒë‹˜ì€ ì•„ì£¼ ê°œë°©ì ì´ë‹ˆê¹Œ.";
+                    choose_2.text = "2. ë¬´ìŠ¨ ê³ ë¯¼ì¸ë°?";
+                    choose_3.text = "3. ë¶€ë‹´ì—†ì´ ë§í•´ë´.";
+                    choose = true;
+                }
+                else if(tiara == 30)
+                {
+                    mytalk.text = "";
+                    choose_1.text = "";
+                    choose_2.text = "";
+                    choose_3.text = "";
+                    if (choose_num == 1)
+                    {
+                        talk.text = ".......";
+                        GetComponent<State>().Mental_add(-5);
+                        GetComponent<State>().Friendship_add(-10);
+                    }
+                    else if (choose_num == 2)
+                    {
+                        talk.text = "ì € ì‚¬ì‹¤ ìŒì•…ì´ í•˜ê³  ì‹¶ì–´ìš”.";
+                        GetComponent<State>().Mental_add(-5);
+                        GetComponent<State>().Friendship_add(5);
+                    }
+                    else if(choose_num == 3)
+                    {
+                        talk.text = "ì € ì‚¬ì‹¤ ìŒì•…ì´ í•˜ê³  ì‹¶ì–´ìš”.";
+                        GetComponent<State>().Mental_add(5);
+                        GetComponent<State>().Friendship_add(-5);
+                    }
+                }
+                else if(tiara == 31)
+                {
+                    talk.text = "ë¶€ëª¨ë‹˜ ëœ»ì²˜ëŸ¼, ì˜ì‚¬ê°€ ë˜ê³  ì‹¶ì€ ë§ˆìŒì€ \nì¥ë¿”ë„ ì—†ê±°ë“ ìš”.";
+                    mytalk.text = "";
+                    if (choose_num == 1)
+                    {
+                        talk.text = "ì•„ë‹ˆì—ìš”. ì‚¬ì‹¤ ì•„ë¬´ê²ƒë„ ì•„ë‹ˆì—ìš”. \nì € ì•½ì†ì´ ìˆì–´ì„œ ì´ë§Œ ê°€ë³¼ê²Œìš”.";
+                        tiara = 46;
+                        value2 = false;
+                        Invoke("End_talk", 2.5f);
+                    }
+                }
+                else if(tiara == 32)
+                {
+                    talk.text = "";
+                    mytalk.text = "ì§„ì‹¬ì´ë‹ˆ?";
+                }
+                else if(tiara == 33)
+                {
+                    talk.text = "ë„¤, ì§„ì‹¬ì´ì—ìš”. ì €ëŠ” ë¹„í‹€ì¦ˆë¥¼ ë™ê²½í•´ìš”. \nê·¸ë¦¬ê³  ì‹¤ì œ ë¹„í‹€ì¦ˆì²˜ëŸ¼, ë°´ë“œë¥¼ ê²°ì„±í•˜ê³  ì‹¶ì–´ìš”. \nì˜¤ì§ ì‚¬ëŒë“¤ì„ ìœ„í•´ì„œ ê³µì—°í•˜ëŠ”, ê·¸ëŸ° ë°´ë“œë§ì´ì—ìš”.";
+                    mytalk.text = "";
+                }
+                else if(tiara == 34)
+                {
+                    talk.text = "";
+                    mytalk.text = "";
+                    choose_1.text = "1. ì‚¬ì‹¤ ë‚˜ë˜í•œ í•™ì°½ì‹œì ˆì— ê·¸ëŸ° ì¹œêµ¬ê°€ ìˆì—ˆë‹¨ë‹¤.";
+                    choose_3.text = "2. ê·¸ë ‡êµ¬ë‚˜. ë¬´ìŠ¨ ë§ì¸ì§€ ì˜ ì•Œê² ì–´.";
+                    choose = true;
+                }
+                else if(tiara == 35)
+                {
+                    choose_1.text = "";
+                    choose_2.text = "";
+                    choose_3.text = "";
+                    if (choose_num == 3)
+                    {
+                        tiara = 43;
+                    }
+                    talk.text = "ì–´ë–¤ ì¹œêµ¬ì˜€ë‚˜ìš”?";
+                    mytalk.text = "";
+                }
+                else if(tiara == 36)
+                {
+                    talk.text = "";
+                    mytalk.text = "ê³µë¶€ë„ ì•„ì£¼ ì˜í–ˆê³ , ì„±ê²©ë„ ì•„ì£¼ ì¹œí™”ì ì´ì—ˆì§€. ì¸ê¸°ë„ ë§ì•˜ì–´.";
+                }
+                else if(tiara == 37)
+                {
+                    talk.text = "ê·¸ëŸ°ë°ìš”?";
+                    mytalk.text = "";
+                }
+                else if(tiara == 38)
+                {
+                    talk.text = "";
+                    mytalk.text = "ê°‘ìê¸° ê°€ìˆ˜ë¥¼ í•˜ê² ë‹¤ê³  í•˜ë”ë¼. \nì§„ì •í•œ ê¸¸ì€ ì‚¬ì‹¤ ê±°ê¸°ì— ìˆì—ˆëŠ”ë°,";
+                }
+                else if(tiara == 39)
+                {
+                    talk.text = "";
+                    mytalk.text = "ì§€ê¸ˆê» ë„ˆë¬´ë‚˜ ë§ì€ ë°©í™©ì„ í•´ì˜¨ ê²ƒ ê°™ë‹¤ê³ . \nì´ì œë¶€í„°ë¼ë„ ê¿ˆì„ ì°¾ì•„ ë‚˜ì„œê² ë‹¤ê³ .";
+                }
+                else if(tiara == 40)
+                {
+                    talk.text = "ê·¸ë˜ì„œìš”?ã€€ê·¸ ì¹œêµ¬ëŠ” ì–´ë–»ê²Œ ë˜ì—ˆì–´ìš”?";
+                    mytalk.text = "";
+                }
+                else if(tiara == 41)
+                {
+                    talk.text = "";
+                    mytalk.text = "ì£½ì—ˆì–´. ë¬´ëª… ìƒí™œ 10ë…„ë™ì•ˆ, ì•„ë¬´ê²ƒë„ ì´ë¤„ë‚¼ ìˆ˜ ì—†ì—ˆê±°ë“ .";
+                }
+                else if(tiara == 42)
+                {
+                    talk.text = "";
+                    mytalk.text = "ë¬¼ë¡  ê·¸ ë…€ì„ì˜ ì£¼ê´€ì ì¸ ê¸°ì¤€ì— í•œí•´ì„œì§€ë§Œ.";
+                }
+                else if(tiara == 43)
+                {
+                    talk.text = "ë¹„ì°¸í•˜êµ°ìš”.";
+                    mytalk.text = "";
+                    tiara = 44;
+                }
+                else if(tiara == 44)
+                {
+                    talk.text = "ì´í•´í•´ì£¼ì‹œëŠ”ê±´ê°€ìš”?";
+                    mytalk.text = "";
+                }
+                else if(tiara == 45)
+                {
+                    talk.text = "";
+                    mytalk.text = "ê·¸ë˜, ì•„ë¬´ë ´. ê²°êµ­ì€ ì˜ ìƒê°í•˜ëŠ”ê²Œ ì¢‹ì„ê±°ì•¼.";
+                }
+                else if(tiara == 46)
+                {
+                    talk.text = "";
+                    mytalk.text = "ê³ ì§‘ì„ ë¶€ë¦¬ëŠ” ê²ƒì€ ì•„ë‹Œì§€, ì§„ì • ìŒì•…ì„ ì‚¬ë‘í•˜ëŠ”ì§€.";
+                    value2 = false;
+                    Invoke("End_talk", 2.5f);
+                }
+                if(GetComponent<State>().friendship_1 >= 21 && GetComponent<State>().mental_1 >= 21)
+                {
+                    if (tiara == 47)
+                    {
+                        talk.text = "ì „, ì •í–ˆì–´ìš”. ëˆ„ê°€ë­ë˜ë„ ìŒì•…ì„ í• ê±°ì—ìš”.";
+                        mytalk.text = "";
+                    }
+                    else if(tiara == 48)
+                    {
+                        talk.text = "";
+                        mytalk.text = "ê·¸ë ‡êµ¬ë‚˜. ì†”ì§íˆ ë§í•˜ìë©´, ì‰½ì§€ ì•Šì„ê±°ì•¼.";
+                    }
+                    else if(tiara == 49)
+                    {
+                        talk.text = "";
+                        mytalk.text = "í˜„ì‹¤ì ìœ¼ë¡œ ë¬´ë¦¬ì¼ì§€ë„ ëª¨ë¥´ì§€.";
+                    }
+                    else if(tiara == 50)
+                    {
+                        talk.text = "";
+                        mytalk.text = "ê¿ˆì´ë¼ëŠ” ì´ìƒì  ëª¨í† ì— ë‹¤ê°€ê°€ëŠ” ê²ƒì´, \nì‚¬ì‹¤ ë§ì²˜ëŸ¼ ì‰¬ìš´ ì¼ì€ ì•„ë‹ˆë‹ˆê¹Œ.";
+                    }
+                    else if(tiara == 51)
+                    {
+                        talk.text = "í•„íˆ ê°ë‚´í•´ì•¼í•˜ëŠ” ë¶€ë¶„ì´ê² ì£ .";
+                        mytalk.text = "";
+                    }
+                    else if(tiara == 52)
+                    {
+                        talk.text = "";
+                        mytalk.text = "ì›ë˜ ì°½ì‘ì´ ê·¸ë˜.";
+                    }
+                    else if(tiara == 53)
+                    {
+                        talk.text = "";
+                        mytalk.text = "ìˆ˜ë§ì€ ê²½ìŸìë“¤ ì†ì—ì„œ, ì†Œìˆ˜ì˜ ì¬ëŠ¥ê³¼ ìš´ì„ ê²¸ë¹„í•œ ì‚¬ëŒë“¤ë§Œì´ ì„ íƒë°›ê³ , \nì„¸ìƒì— ë“œëŸ¬ë‚˜ê²Œ ë˜ëŠ”ê±°ì•¼.";
+                    }
+                    else if(tiara == 54)
+                    {
+                        talk.text = "";
+                        mytalk.text = "ì•„ì§ ìš°ë¦¬ê°€ ëª¨ë¥´ëŠ” 'ë¹„í‹€ì¦ˆ'ëŠ” ì„¸ìƒì— ë„˜ì¹˜ê³  ë„˜ì³¤ì–´";
+                    }
+                    else if(tiara == 55)
+                    {
+                        talk.text = "í•˜ì§€ë§Œ ë„ì „í•´ë³¼ ê°€ì¹˜ëŠ” ì¶©ë¶„í•˜ë‹¤ê³  ìƒê°í•´ìš”.";
+                        mytalk.text = "";
+                    }
+                    else if(tiara == 56)
+                    {
+                        talk.text = "ë§‰ì—°í•˜ê³  ë‘ë µë‹¤ëŠ” ì´ìœ  í•˜ë‚˜ë¡œ, \nì•ˆì •ëœ ê¸¸ë§Œì„ ì¶”êµ¬í•˜ë ¤ í•œë‹¤ë©´";
+                        mytalk.text = "";
+                    }
+                    else if(tiara == 57)
+                    {
+                        talk.text = "ë¶„ëª… ë‚˜ì¤‘ì— í›„íšŒí• ê±°ì—ìš”. \nê·¸ë•Œ ì™œ ë„ì „ì„ ë§ì„¤ì˜€ì„ê¹Œ, í•˜ê³ .";
+                        mytalk.text = "";
+                    }
+                    else if (tiara == 58)
+                    {
+                        talk.text = "";
+                        mytalk.text = "ì¢‹ì•„. ê·¸ëŒ€ì‹  ê³µë¶€ë„ ì¤‘ìš”í•˜ë‹¨ë‹¤. ë¬´ìŠ¨ ë§ì¸ì§€ ì•Œì§€?";
+                    }
+                    else if (tiara == 59)
+                    {
+                        talk.text = "ë„¤, ë‹¹ì—°í•˜ì£ .";
+                        mytalk.text = "";
+                        GetComponent<State>().stan_ending = 2;
+                        value2 = false;
+                        Invoke("End_talk", 2.5f);
+                    }
+
+                }
+                else if (GetComponent<State>().friendship_1 < 21 && GetComponent<State>().mental_1 < 21)
+                {
+                    GetComponent<State>().stan_ending = 1;
+                }
             }
             else if(GetComponent<State>().join_student == 2)
             {
-
+                if (stan == 1)
+                {
+                    talk.text = "";
+                    mytalk.text = "ì•ˆë…• ìŠ¤íƒ  ë¦¬. ìˆ™ì œëŠ” í•´ ì™”ì–´?";
+                }
+                else if (stan == 2)
+                {
+                    talk.text = "ì‚¬ì‹¤ ì•„ì§ ëª»í–ˆì–´ìš”. ì´ë²ˆ ìƒë‹´ì—ì„œ ì œ ìƒê°ì„ \nì¡°ê¸ˆì´ë¼ë„ í™•ê³ íˆ í•˜ê³  ì‹¶ì–´ì„œ.";
+                    mytalk.text = "";
+                }
+                else if(stan == 3)
+                {
+                    talk.text = "";
+                    mytalk.text = "ê·¸ëŸ° ì´ìœ ë¼ë©´ ì˜í–ˆì–´. ë‚˜ì˜ì§€ ì•Šì€ ì„ íƒì„ í–ˆë„¤.";
+                    GetComponent<State>().Friendship_add(5);
+                }
+                else if(stan == 4)
+                {
+                    talk.text = "ì„ ìƒë‹˜ì€â€¦. ì–´ë–¤ ì„ íƒì´ ë§ë‹¤ê³  ìƒê°í•˜ì„¸ìš”?";
+                    mytalk.text = "";
+                }
+                else if(stan == 5)
+                {
+                    talk.text = "";
+                    choose_1.text = "1. ë‚´ê°€ ê²°ì •í•  ìˆœ ì—†ì„ ê²ƒ ê°™ì€ë°.";
+                    choose_2.text = "2. ê³„ì† ì¶•êµ¬í•˜ëŠ” ê±°.";
+                    choose_3.text = "3. ì§€ê¸ˆì´ë¼ë„ ê³µë¶€í•˜ëŠ” ê±°.";
+                    choose = true;
+                }
+                else if(stan == 6)
+                {
+                    mytalk.text = "";
+                    choose_1.text = "";
+                    choose_2.text = "";
+                    choose_3.text = "";
+                    if (choose_num == 1)
+                    {
+                        GetComponent<State>().Mental_add(5);
+                        GetComponent<State>().Friendship_add(5);
+                        talk.text = "ì™œì£ ?";
+                    }
+                    else if (choose_num == 2)
+                    {
+                        GetComponent<State>().Friendship_add(5);
+                        talk.text = "ê·¸ê²Œ ë§ë‹¤ê³  ìƒê°í•˜ëŠ” ê±°ì—ìš”?";
+                    }
+                    else if (choose_num == 3)
+                    {
+                        GetComponent<State>().Mental_add(-5);
+                        talk.text = "ê·¸ê²Œ ë§ë‹¤ê³  ìƒê°í•˜ëŠ” ê±°ì—ìš”?";
+                    }
+                    
+                }
+                else if(stan == 7)
+                {
+                    talk.text = "";
+                    if (choose_num == 1)
+                        mytalk.text = "ë„¤ ì¸ìƒì— ë‚¨ì¸ ë‚´ê°€ ì •ë‹µì„ ì¤„ ìˆœ ì—†ì§€. \nì–´ë µê² ì§€ë§Œ ì–´ì©” ìˆ˜ ì—†ì–´. ê·¸ì•¼ ì¸ìƒì„ ì¢Œìš°í•˜ëŠ” ì¼ì¸ë°.";
+                    else if (choose_num == 2)
+                        mytalk.text = "ìŒ. ë‚´ê°€ ìœ ì¶”í•´ë³¸ ê²°ê³¼ ë„¤ê°€ ì›í•˜ëŠ” ê²Œ ê·¸ê±°ë¼ê³  ìƒê°í–ˆê±°ë“ .";
+                    else if (choose_num == 3)
+                        mytalk.text = "ì†”ì§íˆ ë§í•˜ìë©´. ë‚´ ì£¼ê´€ì ì¸ ì˜ê²¬ì´ í•„ìš”í•˜ë‹¤ëŠ” ê²ƒ ê°™ì•„ì„œ. ë¬¼ë¡  ë‚´ ìƒê°ì¼ ë¿ì´ì•¼.";
+                }
+                else if(stan == 8)
+                {
+                    mytalk.text = "";
+                    if (choose_num == 1)
+                        talk.text = "ê·¸ë˜ë„ìš”.";
+                    else if (choose_num == 2)
+                    {
+                        talk.text = "ê·¸ë ‡êµ°ìš”. \nì„ ìƒë‹˜ ë‹µë³€ì„ ë“£ê³  ì—„ì²­ ì•ˆë„ëë˜ ê±¸ ë³´ë©´ ê·¸ëŸ´ì§€ë„ìš”. \nìƒê° ì •ë¦¬ë¥¼ í•˜ê³  ì‹¶ì–´ìš”. ì˜¤ëŠ˜ì€ ì´ë§Œ ê°€ë³¼ê²Œìš”!";
+                        stan = 10;
+                        value2 = false;
+                        Invoke("End_talk", 2.5f);
+               
+                    }
+                    else if (choose_num == 3) { 
+                        talk.text = "ê·¸ë ‡êµ°ìš”. \nê·¸ëŸ¼ ì´ì œ í˜¼ì ìƒê°í•  ì‹œê°„ì´ í•„ìš”í•  ê²ƒ ê°™ì•„ìš”. \nì˜¤ëŠ˜ì€ ì´ë§Œ ê°€ë³¼ê²Œìš”.";
+                        stan = 10;
+                        value2 = false;
+                        Invoke("End_talk", 2.5f);
+              
+                    }
+                }
+                else if(stan == 9)
+                {
+                    talk.text = "";
+                    mytalk.text = "ê·¸ëƒ¥ ë„¤ê°€ í•˜ê³  ì‹¶ì€ ê±¸ í•´. \nì•ˆ ì¢‹ì•„í•˜ëŠ” ê±° í•˜ëŠ” ëŒ€ì‹  ì„±ê³µí•œ ì¸ìƒì„ ì‚°ë‹¤ í•´ë„ ê²°êµ­ ìŠ¤íŠ¸ë ˆìŠ¤ ì—„ì²­ ë°›ì„ ê±¸.";
+                }
+                else if(stan == 10)
+                {
+                    talk.text = "ê·¸ë ‡êµ°ìš”. ë­”ê°€ ì•Œ ë“¯ ë§ ë“¯ í•˜ë„¤ìš”. \nì•„ë¬´íŠ¼ ê³ ë§ˆì›Œìš”. \nì„ ìƒë‹˜ ë§ëŒ€ë¡œë¼ë©´ í˜¼ì ìƒê°í•  ì‹œê°„ì´ í•„ìš”í•˜ê² ì–´ìš”. ì´ë§Œ ê°€ë³¼ê²Œìš”!";
+                    mytalk.text = "";
+                    value2 = false;
+                    Invoke("End_talk", 2.5f);
+                }
+                else if (stan == 11)
+                {
+                    talk.text = "ì €, ë“œë””ì–´ ë§í•˜ê³  ì™”ì–´ìš”.";
+                    mytalk.text = "";
+                }
+                else if(stan == 12)
+                {
+                    talk.text = "";
+                    mytalk.text = "ë©‹ì§€ë„¤. ë‹¤í–‰íˆ ì €ë²ˆì— ìƒê°ì´ í™•ê³ í•´ì¡Œë‚˜ ë´?";
+                }
+                else if(stan == 13)
+                {
+                    mytalk.text = "";
+                    if(GetComponent<State>().friendship_2 <= 20 || GetComponent<State>().mental_2 <= 20)
+                    {
+                        talk.text = "ê·¸ê±´ ì•„ë‹ˆê³ ... ë” ì´ìƒ ê¹Šê²Œ ìƒê°í•˜ê³  ì‹¶ì§€ ì•Šì•˜ì–´ìš”. ë¨¸ë¦¬ ì•„í”ˆê±¸ìš”.";
+                    }
+                    else if (GetComponent<State>().friendship_2 < 30 || GetComponent<State>().mental_2 < 40)
+                    {
+                        talk.text = "ë„¤. ì œê°€ ë§ëŠ”ë‹¤ê³  ìƒê°í•œ ê±¸ ì„ íƒí–ˆì–´ìš”.";
+                    }
+                    else if (GetComponent<State>().friendship_2 >= 30 || GetComponent<State>().mental_2 >= 40)
+                    {
+                        talk.text = "ë„¤. ë­”ê°€ ì„±ì¥í•œ ê¸°ë¶„ì´ ë“¤ì—ˆë‹¬ê¹Œ.... \nê²°êµ­ ì œê°€ ì›í•˜ëŠ” ê±¸ ì„ íƒí–ˆì–´ìš”.";
+                    }
+                }
+                else if(stan == 14)
+                {
+                    talk.text = "";
+                    if (GetComponent<State>().friendship_2 <= 20 || GetComponent<State>().mental_2 <= 20)
+                    {
+                        mytalk.text = "ê·¸ëŸ° ìí¬ìê¸°ì‹ì€ ì¢‹ì§€ ì•Šì•„";
+                    }
+                    else if (GetComponent<State>().friendship_2 < 30 || GetComponent<State>().mental_2 < 40)
+                    {
+                        mytalk.text = "ë­”ì§€ ë¬¼ì–´ë´ë„ ë ê¹Œ.";
+                    }
+                    else if (GetComponent<State>().friendship_2 >= 30 || GetComponent<State>().mental_2 >= 40)
+                    {
+                        mytalk.text = "ì›í•˜ëŠ” ê±°ë¼. ì¢‹ë„¤. ";
+                    }
+                }
+                else if(stan == 15)
+                {
+                    mytalk.text = "";
+                    if (GetComponent<State>().friendship_2 <= 20 || GetComponent<State>().mental_2 <= 20)
+                    {
+                        talk.text = "ì „ ê·¸ëƒ¥ ì´ê²Œ í¸í•´ìš”. ì´ë²ˆ ìƒë‹´ì— ì˜¨ ê²ƒë„ ì„ ìƒë‹˜í•œí…Œ ì´ ë§ë§Œ ì „í•˜ë ¤ê³  ì˜¨ ê±°ì˜€ì–´ìš”. \nê·¸ë˜ì•¼ ì œ ë§ˆìŒì´ ì™„ì „íˆ í¸í•´ì§ˆ ê²ƒ ê°™ì•„ì„œ. ëŒ€ë‹µì€ ë“£ê³  ì‹¶ì§€ ì•Šë„¤ìš”. ê·¸ëŸ¼ ì´ë§Œ.";
+                        GetComponent<State>().stan_ending = 1;
+                        value2 = false;
+                        Invoke("End_talk", 2.5f);
+                    }
+                    else if (GetComponent<State>().friendship_2 < 30 || GetComponent<State>().mental_2 < 40)
+                    {
+                        talk.text = "ë„¤ ë­. ë„ˆë¬´ ëŠ¦ì—ˆì„ì§€ë„ ëª¨ë¥´ì§€ë§Œ, \nê²€ì •ê³ ì‹œë¥¼ ë³¼ê¹Œ ìƒê° ì¤‘ì´ì—ìš”. \nì¶•êµ¬ëŠ” ì·¨ë¯¸ë¡œ ë‚¨ê¸°ê³ .";
+                    }
+                    else if (GetComponent<State>().friendship_2 >= 30 || GetComponent<State>().mental_2 >= 40)
+                    {
+                        talk.text = "ë¶€ëª¨ë‹˜ì´ ì œê²Œ ë¬´ìŠ¨ ë§ì”€í•˜ì…¨ëŠ”ì§€ ê¶ê¸ˆí•˜ì§€ ì•Šìœ¼ì„¸ìš”?";
+                    }
+                }
+                else if(stan == 16)
+                {
+                    talk.text = "";
+                    if (GetComponent<State>().friendship_2 < 30 || GetComponent<State>().mental_2 < 40)
+                    {
+                        mytalk.text = "ê·¸ ê¸¸ì„ ì„ íƒí–ˆêµ¬ë‚˜. ë­, ë‚˜ì˜ì§€ ì•Šì§€.";
+                    }
+                    else if (GetComponent<State>().friendship_2 >= 30 || GetComponent<State>().mental_2 >= 40)
+                    {
+                        mytalk.text = "ë­˜. ë„¤ê°€ ì›í•˜ëŠ” ê±°ë¼ë©°. ê·¸ëŸ¼ ê·¸ê²Œ ë§ëŠ” ê±°ê² ì§€.";
+                        GetComponent<State>().stan_ending = 3;
+                        value2 = false;
+                        Invoke("End_talk", 2.5f);
+                    }
+                        
+                }
+                else if(stan == 17)
+                {
+                    talk.text = "ë„¤. ì•ìœ¼ë¡œ ì—´ì‹¬íˆ ê³µë¶€í•  ê±°ë‹ˆê¹ìš”.";
+                    mytalk.text = "";
+                    GetComponent<State>().stan_ending = 2;
+                    value2 = false;
+                    Invoke("End_talk", 2.5f);
+                }
             }
             else if(GetComponent<State>().join_student == 3)
             {
                 if (olivia == 1)
                 {
-                    talk.text = "¾È³ç, ¼±»ı";
+                    talk.text = "ì•ˆë…•, ì„ ìƒ";
                     mytalk.text = "";
                 }
                 else if (olivia == 2)
                 {
                     talk.text = "";
-                    mytalk.text = "¹İ¸» »ç¿ëÇÏ´Â °Å¾ß?\n±×·¡µµ ¹¹ ¾È³ç, ¿Ã¸®ºñ¾Æ. ¹İ°¡¿ö.";
+                    mytalk.text = "ë°˜ë§ ì‚¬ìš©í•˜ëŠ” ê±°ì•¼?\nê·¸ë˜ë„ ë­ ì•ˆë…•, ì˜¬ë¦¬ë¹„ì•„. ë°˜ê°€ì›Œ.";
                 }
                 else if (olivia == 3)
                 {
-                    talk.text = "²Á´ëµµ ¾Æ´Ï°í ±×·± °Å µûÁöÁö ¸¶.";
+                    talk.text = "ê¼°ëŒ€ë„ ì•„ë‹ˆê³  ê·¸ëŸ° ê±° ë”°ì§€ì§€ ë§ˆ.";
                     mytalk.text = "";
                 }
                 else if (olivia == 4)
                 {
-                    talk.text = "±×³ªÀú³ª ÀÌ°Å ¿À·¡ ¾È ÇÏÁö?\nÁö·çÇØ º¸ÀÌ´Âµ¥.";
+                    talk.text = "ê·¸ë‚˜ì €ë‚˜ ì´ê±° ì˜¤ë˜ ì•ˆ í•˜ì§€?\nì§€ë£¨í•´ ë³´ì´ëŠ”ë°.";
                     mytalk.text = "";
                 }
                 else if (olivia == 5)
                 {
                     talk.text = "";
-                    mytalk.text = "¿¹Á¤´ë·Î¶ó¸é ¾ÕÀ¸·Î ÃÑ 4¹ø »ó´ã ÇÒ °Å¾ß.\nÀû´çÇÏÁö? ±×·³ »ó´ã ½ÃÀÛÇÒ°Ô! À½..";
+                    mytalk.text = "ì˜ˆì •ëŒ€ë¡œë¼ë©´ ì•ìœ¼ë¡œ ì´ 4ë²ˆ ìƒë‹´ í•  ê±°ì•¼.\nì ë‹¹í•˜ì§€? ê·¸ëŸ¼ ìƒë‹´ ì‹œì‘í• ê²Œ! ìŒ..";
                 }
                 else if (olivia == 6)
                 {
                     mytalk.text = "";
-                    choose_1.text = "1. ³Í ²ŞÀÌ ¹¹´Ï?";
-                    choose_2.text = "2. ¿À´ÃÀº ¹» ÇÏ°í Áö³Â´Ï?";
-                    choose_3.text = "3. ÀÌ¸§À» º¸´Ï ¿ÃOºñ¿µÀÌ »ı°¢³ª³×.";
+                    choose_1.text = "1. ë„Œ ê¿ˆì´ ë­ë‹ˆ?";
+                    choose_2.text = "2. ì˜¤ëŠ˜ì€ ë­˜ í•˜ê³  ì§€ëƒˆë‹ˆ?";
+                    choose_3.text = "3. ì´ë¦„ì„ ë³´ë‹ˆ ì˜¬Oë¹„ì˜ì´ ìƒê°ë‚˜ë„¤.";
                     choose = true;
                 }
                 else if (olivia == 7)
@@ -327,37 +801,37 @@ public class Talk : MonoBehaviour
                     if (choose_num == 1)
                     {
                         GetComponent<State>().Mental_add(-5);
-                        talk.text = "¸ô¶ó? ²ŞÀÌ ¾øÀ¸´Ï±î ¿©±â ¿Â °ÅÀİ¾Æ\nÇÏ... ±×³É ³î°í ½Í¾ú´Âµ¥.";
+                        talk.text = "ëª°ë¼? ê¿ˆì´ ì—†ìœ¼ë‹ˆê¹Œ ì—¬ê¸° ì˜¨ ê±°ì–ì•„\ní•˜... ê·¸ëƒ¥ ë†€ê³  ì‹¶ì—ˆëŠ”ë°.";
                     }
                     else if (choose_num == 2)
                     {
                         GetComponent<State>().Friendship_add(5);
-                        talk.text = "¾ÖµéÀÌ¶û ³ë·¡¹æ °¡¼­ ³î´Ù ¿Ô¾î.\n³»°¡ ³ë·¡´Â ¸ô¶óµµ ÃãÀº Á» Ãß°Åµç.";
+                        talk.text = "ì• ë“¤ì´ë‘ ë…¸ë˜ë°© ê°€ì„œ ë†€ë‹¤ ì™”ì–´.\në‚´ê°€ ë…¸ë˜ëŠ” ëª°ë¼ë„ ì¶¤ì€ ì¢€ ì¶”ê±°ë“ .";
                     }
                     else if (choose_num == 3)
                     {
                         GetComponent<State>().Mental_add(-25);
-                        talk.text = "¹¹¶ó´Â °Å¾ß. ¹«½¼ ±×·± °É ¹°¾îºÁ?";
+                        talk.text = "ë­ë¼ëŠ” ê±°ì•¼. ë¬´ìŠ¨ ê·¸ëŸ° ê±¸ ë¬¼ì–´ë´?";
                     }
                 }
                 else if (olivia == 8)
                 {
                     talk.text = "";
                     if (choose_num == 1)
-                        mytalk.text = "Áø·Î Ä­¿¡ ²ŞÀÌ ¾È ÀûÇô ÀÖ´õ¶ó.\nÁ¤¸» ¾Æ¹«°Å³ª ¿øÇÏ´Â °É ¸»ÇØ ºÁµµ ±¦Âú¾Æ.";
+                        mytalk.text = "ì§„ë¡œ ì¹¸ì— ê¿ˆì´ ì•ˆ ì í˜€ ìˆë”ë¼.\nì •ë§ ì•„ë¬´ê±°ë‚˜ ì›í•˜ëŠ” ê±¸ ë§í•´ ë´ë„ ê´œì°®ì•„.";
                     else if (choose_num == 2)
-                        mytalk.text = "¿À, ±×·³ ²ŞÀº ÃãÀÌ¶û °ü·ÃµÈ °Å·Á³ª?\n¾Æ¹«°Å³ª ¸»ÇØºÁ.";
+                        mytalk.text = "ì˜¤, ê·¸ëŸ¼ ê¿ˆì€ ì¶¤ì´ë‘ ê´€ë ¨ëœ ê±°ë ¤ë‚˜?\nì•„ë¬´ê±°ë‚˜ ë§í•´ë´.";
                     else if (choose_num == 3)
-                        mytalk.text = "¹Ì¾È. Àå³­ Á» ÃÄ ºÃ¾î.";
+                        mytalk.text = "ë¯¸ì•ˆ. ì¥ë‚œ ì¢€ ì³ ë´¤ì–´.";
                 }
                 else if (olivia == 9)
                 {
                     mytalk.text = "";
                     if (choose_num == 1 || choose_num == 2)
-                        talk.text = "´í¼­? Ãã Àß Ãß´Ï±î.";
+                        talk.text = "ëŒ„ì„œ? ì¶¤ ì˜ ì¶”ë‹ˆê¹Œ.";
                     else if (choose_num == 3)
                     {
-                        talk.text = "ÇÏ.... Â¥Áõ ³ª³×. »ó´ã ¾È ÇØ.";
+                        talk.text = "í•˜.... ì§œì¦ ë‚˜ë„¤. ìƒë‹´ ì•ˆ í•´.";
                         value2 = false;
                         Invoke("End_talk", 2.5f);
                     }
@@ -365,25 +839,25 @@ public class Talk : MonoBehaviour
                 else if (olivia == 10)
                 {
                     talk.text = "";
-                    mytalk.text = "¸ÚÁøµ¥. ÀßÇÏ´Â °É Áø·Î·Î Àâ´Â °Ç ÁÁÀº ÀÏÀÌÁö.";
+                    mytalk.text = "ë©‹ì§„ë°. ì˜í•˜ëŠ” ê±¸ ì§„ë¡œë¡œ ì¡ëŠ” ê±´ ì¢‹ì€ ì¼ì´ì§€.";
                     GetComponent<State>().Friendship_add(5);
                 }
                 else if (olivia == 11)
                 {
                     mytalk.text = "";
-                    talk.text = "°Å±â´Ù ÁÁ¾ÆÇÏ±âµµ ÇÏ´Ï±ñ?\n±×³É ¾Æ¹« ¸»ÀÌ³ª ÇØ º» °ÅÁö¸¸ ³ª¸§ ±¦ÂúÀº °Å °°³×.";
+                    talk.text = "ê±°ê¸°ë‹¤ ì¢‹ì•„í•˜ê¸°ë„ í•˜ë‹ˆê¹?\nê·¸ëƒ¥ ì•„ë¬´ ë§ì´ë‚˜ í•´ ë³¸ ê±°ì§€ë§Œ ë‚˜ë¦„ ê´œì°®ì€ ê±° ê°™ë„¤.";
                 }
                 else if (olivia == 12)
                 {
                     talk.text = "";
-                    mytalk.text = "´Ü¹ø¿¡ ¿øÇÏ´Â °É Ã£¾Ò³×. ÁÁÀº ÀÏÀÌ¾ß.";
+                    mytalk.text = "ë‹¨ë²ˆì— ì›í•˜ëŠ” ê±¸ ì°¾ì•˜ë„¤. ì¢‹ì€ ì¼ì´ì•¼.";
                 }
                 else if (olivia == 13)
                 {
                     mytalk.text = "";
-                    choose_1.text = "1. ±×·¡µµ ´í¼­´Â Á». 3ÇĞ³âÀÎµ¥ ÀÌÁ¨ °øºÎ¸¦ ÇØ. Àû´çÈ÷ ³î°í.";
-                    choose_2.text = "2. ±×·¯¸é ÀÌ·ç±â À§ÇÑ ±¸Ã¼ÀûÀÎ °èÈ¹À» Â¥¼­ ¿Í º¼·¡?";
-                    choose_3.text = "3. ±×·¯¸é ´ÙÀ½ »ó´ã¿¡ ¾î¶»°Ô ²ŞÀ» ÀÌ·êÁö °èÈ¹ÇØº¼±î?";
+                    choose_1.text = "1. ê·¸ë˜ë„ ëŒ„ì„œëŠ” ì¢€. 3í•™ë…„ì¸ë° ì´ì   ê³µë¶€ë¥¼ í•´. ì ë‹¹íˆ ë†€ê³ .";
+                    choose_2.text = "2. ê·¸ëŸ¬ë©´ ì´ë£¨ê¸° ìœ„í•œ êµ¬ì²´ì ì¸ ê³„íšì„ ì§œì„œ ì™€ ë³¼ë˜?";
+                    choose_3.text = "3. ê·¸ëŸ¬ë©´ ë‹¤ìŒ ìƒë‹´ì— ì–´ë–»ê²Œ ê¿ˆì„ ì´ë£°ì§€ ê³„íší•´ë³¼ê¹Œ?";
                     choose = true;
                 }
                 else if (olivia == 14)
@@ -395,14 +869,14 @@ public class Talk : MonoBehaviour
                     if (choose_num == 1)
                     {
                         GetComponent<State>().Mental_add(-25);
-                        talk.text = "Â¥Áõ³ª³×. ±â²¯ ¿Í Áá´õ´Ï.";
+                        talk.text = "ì§œì¦ë‚˜ë„¤. ê¸°ê» ì™€ ì¤¬ë”ë‹ˆ.";
                         value2 = false;
                         Invoke("End_talk", 2.5f);
                     }
                     else if (choose_num == 2)
                     {
                         GetComponent<State>().Mental_add(-5);
-                        talk.text = "±ÍÂúÀºµ¥. ÇÏ... ¾Ë°Ú¾î. ÀÌ¸¸ °¡ º¼°Ô.";
+                        talk.text = "ê·€ì°®ì€ë°. í•˜... ì•Œê² ì–´. ì´ë§Œ ê°€ ë³¼ê²Œ.";
                         olivia = 16;
                         value2 = false;
                         Invoke("End_talk", 2.5f);
@@ -410,43 +884,43 @@ public class Talk : MonoBehaviour
                     else if (choose_num == 3)
                     {
                         GetComponent<State>().Friendship_add(5);
-                        talk.text = "¹¹, ¾Ë°Ú¾î. ´ÙÀ½¹ø¿¡µµ ¿©±â·Î ¿À¸é µÇ³ª?";
+                        talk.text = "ë­, ì•Œê² ì–´. ë‹¤ìŒë²ˆì—ë„ ì—¬ê¸°ë¡œ ì˜¤ë©´ ë˜ëƒ?";
                     }
                 }
                 else if (olivia == 15)
                 {
                     talk.text = "";
-                    mytalk.text = "¸Â¾Æ. ±×¸®°í ´ÙÀ½ »ó´ã Àü±îÁö ÇØ¿Ã °Ô ÇÏ³ª ÀÖ¾î.\n³ª¶û ÅäÀÇ ÇÏ±â Àü È¥ÀÚ¼­ °£´ÜÇÏ°Ô¶óµµ ²ŞÀ» ÀÌ·ç±â À§ÇÑ °èÈ¹À» Â¥ ¿ÍÁà.";
+                    mytalk.text = "ë§ì•„. ê·¸ë¦¬ê³  ë‹¤ìŒ ìƒë‹´ ì „ê¹Œì§€ í•´ì˜¬ ê²Œ í•˜ë‚˜ ìˆì–´.\në‚˜ë‘ í† ì˜ í•˜ê¸° ì „ í˜¼ìì„œ ê°„ë‹¨í•˜ê²Œë¼ë„ ê¿ˆì„ ì´ë£¨ê¸° ìœ„í•œ ê³„íšì„ ì§œ ì™€ì¤˜.";
                 }
                 else if (olivia == 16)
                 {
                     mytalk.text = "";
-                    talk.text = "¾öÃ» °£´ÜÇØµµ ±¦ÂúÁö? ±×·³ ÀÌ¸¸ ÁøÂ¥ °¡ º¼°Ô.";
+                    talk.text = "ì—„ì²­ ê°„ë‹¨í•´ë„ ê´œì°®ì§€? ê·¸ëŸ¼ ì´ë§Œ ì§„ì§œ ê°€ ë³¼ê²Œ.";
                     value2 = false;
                     Invoke("End_talk", 2.5f);
                 }
                 else if (olivia == 17)
                 {
-                    mytalk.text = "¹İ°¡¿ö. °èÈ¹Àº Â¥ ¿Ô¾î, ¿Ã¸®ºñ¾Æ?";
+                    mytalk.text = "ë°˜ê°€ì›Œ. ê³„íšì€ ì§œ ì™”ì–´, ì˜¬ë¦¬ë¹„ì•„?";
                 }
                 else if (olivia == 18)
                 {
                     mytalk.text = "";
                     if (GetComponent<State>().friendship_3 >= 30)
-                        talk.text = "º¸´Ï±î ÃàÁ¦¿¡¼­ ´í¼­¸¦ ¸ğÁıÇÑ´Ù´øµ¥. \n°Å±â Âü°¡ÇÏ´Â °Å ¾î¶»°Ô »ı°¢ÇØ?";
+                        talk.text = "ë³´ë‹ˆê¹Œ ì¶•ì œì—ì„œ ëŒ„ì„œë¥¼ ëª¨ì§‘í•œë‹¤ë˜ë°. \nê±°ê¸° ì°¸ê°€í•˜ëŠ” ê±° ì–´ë–»ê²Œ ìƒê°í•´?";
                     else
-                        talk.text = "¾Æ, ±î¸Ô¾ú³×. ³ë´À¶ó ¾È Â¥ ¿Ô¾î.";
+                        talk.text = "ì•„, ê¹Œë¨¹ì—ˆë„¤. ë…¸ëŠë¼ ì•ˆ ì§œ ì™”ì–´.";
                 }
                 else if (olivia == 19)
                 {
                     talk.text = "";
                     if (GetComponent<State>().friendship_3 >= 30)
                     {
-                        mytalk.text = "¿À. Ä¿¸®¾î¸¦ ½×À» ¼ö ÀÖ°Ú´Ù. ¸ÚÁø °èÈ¹ÀÎµ¥.";
+                        mytalk.text = "ì˜¤. ì»¤ë¦¬ì–´ë¥¼ ìŒ“ì„ ìˆ˜ ìˆê² ë‹¤. ë©‹ì§„ ê³„íšì¸ë°.";
                         GetComponent<State>().Friendship_add(5);
                     }
                     else
-                        mytalk.text = "±×·¸±¸³ª. ³»°¡ Á¶»ç ÇØ ºÃ´Âµ¥ ÀÌ¹ø ÃàÁ¦¿¡¼­ ´í¼­¸¦\n¸ğÁıÇÏ´õ¶ó. °Å±â Âü°¡ÇÏ´Â °Ô ¾î¶§?";
+                        mytalk.text = "ê·¸ë ‡êµ¬ë‚˜. ë‚´ê°€ ì¡°ì‚¬ í•´ ë´¤ëŠ”ë° ì´ë²ˆ ì¶•ì œì—ì„œ ëŒ„ì„œë¥¼\nëª¨ì§‘í•˜ë”ë¼. ê±°ê¸° ì°¸ê°€í•˜ëŠ” ê²Œ ì–´ë•Œ?";
                 }
                 else if (olivia == 20)
                 {
@@ -455,20 +929,20 @@ public class Talk : MonoBehaviour
                     else
                     {
                         mytalk.text = "";
-                        talk.text = "À½... Àç¹Õ°Ú³×. Âü°¡ ÇØ º¼±î.";
+                        talk.text = "ìŒ... ì¬ë°Œê² ë„¤. ì°¸ê°€ í•´ ë³¼ê¹Œ.";
                     }
                 }
                 if (olivia == 21)
                 {
                     mytalk.text = "";
-                    talk.text = "±Ùµ¥ Á» °ÆÁ¤ µÅ. ³»°¡ Àß ÇÒ ¼ö ÀÖÀ»±î?";
+                    talk.text = "ê·¼ë° ì¢€ ê±±ì • ë¼. ë‚´ê°€ ì˜ í•  ìˆ˜ ìˆì„ê¹Œ?";
                 }
                 else if (olivia == 22)
                 {
                     talk.text = "";
-                    choose_1.text = "1. ¿ë±â¸¦ ³»! Àú¹ø¿¡ ÇĞ±³ °ø¿¬ÇÏ´Â °Å ºÃ´Âµ¥ ÀßÇÏ´øµ¥.";
-                    choose_2.text = "2. °ÆÁ¤µÉ ¸¸ÇÏÁö. ½¬¿î ÀÏÀÌ ¾Æ´Ï´Ï±î.";
-                    choose_3.text = "3. ³Í ºĞ¸í ÇÕ°İÇÒ ¼ö ÀÖÀ»°É.";
+                    choose_1.text = "1. ìš©ê¸°ë¥¼ ë‚´! ì €ë²ˆì— í•™êµ ê³µì—°í•˜ëŠ” ê±° ë´¤ëŠ”ë° ì˜í•˜ë˜ë°.";
+                    choose_2.text = "2. ê±±ì •ë  ë§Œí•˜ì§€. ì‰¬ìš´ ì¼ì´ ì•„ë‹ˆë‹ˆê¹Œ.";
+                    choose_3.text = "3. ë„Œ ë¶„ëª… í•©ê²©í•  ìˆ˜ ìˆì„ê±¸.";
                     choose = true;
                 }
                 else if (olivia == 23)
@@ -480,19 +954,19 @@ public class Talk : MonoBehaviour
                     if (choose_num == 1)
                     {
                         GetComponent<State>().Mental_add(5);
-                        talk.text = "³»°¡ °ø¿¬ÇÏ´Â °Å ºÃ¾ú¾î?";
+                        talk.text = "ë‚´ê°€ ê³µì—°í•˜ëŠ” ê±° ë´¤ì—ˆì–´?";
                     }
                     else if (choose_num == 2)
                     {
                         GetComponent<State>().Mental_add(3);
                         GetComponent<State>().Friendship_add(-5);
-                        talk.text = "¹¹·¡. Àß ÇÒ ¼ö ÀÖ°Åµç? ³»°¡ ±×°Íµµ ¸ø ÇÒ±î ºÁ?";
+                        talk.text = "ë­ë˜. ì˜ í•  ìˆ˜ ìˆê±°ë“ ? ë‚´ê°€ ê·¸ê²ƒë„ ëª» í• ê¹Œ ë´?";
                     }
                     else if (choose_num == 3)
                     {
                         GetComponent<State>().Mental_add(-10);
                         GetComponent<State>().Friendship_add(5);
-                        talk.text = "´ç¿¬ÇÏÁö! ³­ ¿¬½À ¾È ÇØµµ ºÙÀ» ¼ö ÀÖÀ»°É.\n´ÙÀ½ »ó´ã ¶§´Â ÇÕ°İ ¼Ò½Ä µé°í ¿Ã°Ô.";
+                        talk.text = "ë‹¹ì—°í•˜ì§€! ë‚œ ì—°ìŠµ ì•ˆ í•´ë„ ë¶™ì„ ìˆ˜ ìˆì„ê±¸.\në‹¤ìŒ ìƒë‹´ ë•ŒëŠ” í•©ê²© ì†Œì‹ ë“¤ê³  ì˜¬ê²Œ.";
                         value2 = false;
                         olivia = 25;
                         Invoke("End_talk", 2.5f);
@@ -502,22 +976,22 @@ public class Talk : MonoBehaviour
                 {
                     talk.text = "";
                     if (choose_num == 1)
-                        mytalk.text = "³×°¡ Àß Ãá´Ù°í ¾ê±âÇßÀ¸´Ï±î ±Ã±İÇØ¼­.\nº¸°í Á¤¸» ³î¶ú¾î.";
+                        mytalk.text = "ë„¤ê°€ ì˜ ì¶˜ë‹¤ê³  ì–˜ê¸°í–ˆìœ¼ë‹ˆê¹Œ ê¶ê¸ˆí•´ì„œ.\në³´ê³  ì •ë§ ë†€ëì–´.";
                     else if (choose_num == 2)
-                        mytalk.text = "Áö³ªÄ£ ÀÚ½Å°¨Àº ÁÁÁö ¾Ê¾Æ. °â¼Õµµ ÇÊ¿äÇØ.";
+                        mytalk.text = "ì§€ë‚˜ì¹œ ìì‹ ê°ì€ ì¢‹ì§€ ì•Šì•„. ê²¸ì†ë„ í•„ìš”í•´.";
                 }
                 else if (olivia == 25)
                 {
                     mytalk.text = "";
                     if (choose_num == 1)
                     {
-                        talk.text = "Èì, ±â»Ú³×. ´ÙÀ½¹ø »ó´ã ¶§´Â °á°ú µé°í µ¹¾Æ¿Ã°Ô!";
+                        talk.text = "í , ê¸°ì˜ë„¤. ë‹¤ìŒë²ˆ ìƒë‹´ ë•ŒëŠ” ê²°ê³¼ ë“¤ê³  ëŒì•„ì˜¬ê²Œ!";
                         value2 = false;
                         Invoke("End_talk", 2.5f);
                     }
                     else if (choose_num == 2)
                     {
-                        talk.text = "µÆ¾î. ¿À´ÃÀº ÀÌ¸¸ °¡ º¼°Ô.";
+                        talk.text = "ëì–´. ì˜¤ëŠ˜ì€ ì´ë§Œ ê°€ ë³¼ê²Œ.";
                         value2 = false;
                         Invoke("End_talk", 2.5f);
                     }
@@ -525,16 +999,16 @@ public class Talk : MonoBehaviour
                 else if (olivia == 26)
                 {
                     if (GetComponent<State>().mental_3 >= 30)
-                        talk.text = "±× ÃàÁ¦ ÀÖÀİ¾Æ, ºÙ¾ú¾î! ´ë¹ÚÀÌÁö.\n³ª Á¤¸» ´í¼­ ÇÒ ¼ö ÀÖÀ»±î?";
+                        talk.text = "ê·¸ ì¶•ì œ ìˆì–ì•„, ë¶™ì—ˆì–´! ëŒ€ë°•ì´ì§€.\në‚˜ ì •ë§ ëŒ„ì„œ í•  ìˆ˜ ìˆì„ê¹Œ?";
                     else
-                        talk.text = "¼±»ı´Ô. ³ª ¶³¾îÁ³¾î. ¸»µµ ¾È µÅ.\n³»°¡ Á¤¸» ´í¼­ ÇÒ ¼ö ÀÖ´Â °Ô ¸Â´Â °É±î?";
+                        talk.text = "ì„ ìƒë‹˜. ë‚˜ ë–¨ì–´ì¡Œì–´. ë§ë„ ì•ˆ ë¼.\në‚´ê°€ ì •ë§ ëŒ„ì„œ í•  ìˆ˜ ìˆëŠ” ê²Œ ë§ëŠ” ê±¸ê¹Œ?";
                 }
                 else if (olivia == 27)
                 {
                     talk.text = "";
-                    choose_1.text = "1. ÇÒ ¼ö ÀÖ¾î.";
-                    choose_2.text = "2. ³Í ÇÒ ¼ö ¾ø¾î.";
-                    choose_3.text = "3. ³ªµµ ¸ğ¸£Áö.";
+                    choose_1.text = "1. í•  ìˆ˜ ìˆì–´.";
+                    choose_2.text = "2. ë„Œ í•  ìˆ˜ ì—†ì–´.";
+                    choose_3.text = "3. ë‚˜ë„ ëª¨ë¥´ì§€.";
                     choose = true;
                 }
                 else if (olivia == 28)
@@ -546,50 +1020,50 @@ public class Talk : MonoBehaviour
                     {
                         GetComponent<State>().Friendship_add(4);
                         GetComponent<State>().Mental_add(-4);
-                        mytalk.text = "´ç¿¬ÇÏÁö! ³Í ºĞ¸í ÃÖ°íÀÇ ´í¼­°¡ µÉ °Å¾ß.";
+                        mytalk.text = "ë‹¹ì—°í•˜ì§€! ë„Œ ë¶„ëª… ìµœê³ ì˜ ëŒ„ì„œê°€ ë  ê±°ì•¼.";
                     }
                     else if (choose_num == 2)
                     {
                         GetComponent<State>().Mental_add(-30);
-                        mytalk.text = "ÀÀ? ¹«½¼ ¼Ò¸± ÇÏ´Â °Å¾ß. Çö½ÇÀûÀ¸·Î »ı°¢ÇØ.\n³Í ¹ú½á 3ÇĞ³âÀÎµ¥ °øºÎÇØ¾ßÁö. ¼³¸¶ Á¤¸» ´í¼­°¡ µÉ »ı°¢À» Ç°°í ÀÖ¾ú¾î?";
+                        mytalk.text = "ì‘? ë¬´ìŠ¨ ì†Œë¦´ í•˜ëŠ” ê±°ì•¼. í˜„ì‹¤ì ìœ¼ë¡œ ìƒê°í•´.\në„Œ ë²Œì¨ 3í•™ë…„ì¸ë° ê³µë¶€í•´ì•¼ì§€. ì„¤ë§ˆ ì •ë§ ëŒ„ì„œê°€ ë  ìƒê°ì„ í’ˆê³  ìˆì—ˆì–´?";
                     }
                     else if (choose_num == 3)
                     {
                         GetComponent<State>().Mental_add(5);
                         GetComponent<State>().Friendship_add(-5);
-                        mytalk.text = "³ªµµ ¸ô¶ó? È®´äÀº ÇÒ ¼ö ¾ø¾î. ±×·¡µµ ³» ÀÇ°ßÀ» ´õÇØ ¸»ÇØº¼°Ô.\n³×°¡ ³¡±îÁö ³ë·ÂÇÑ´Ù¸é ºĞ¸í ÇØ³¾ ¼ö ÀÖÀ» °Å¶ó°í »ı°¢ÇØ.";
+                        mytalk.text = "ë‚˜ë„ ëª°ë¼? í™•ë‹µì€ í•  ìˆ˜ ì—†ì–´. ê·¸ë˜ë„ ë‚´ ì˜ê²¬ì„ ë”í•´ ë§í•´ë³¼ê²Œ.\në„¤ê°€ ëê¹Œì§€ ë…¸ë ¥í•œë‹¤ë©´ ë¶„ëª… í•´ë‚¼ ìˆ˜ ìˆì„ ê±°ë¼ê³  ìƒê°í•´.";
                     }
                 }
                 else if (olivia == 29)
                 {
                     mytalk.text = "";
                     if (choose_num == 1)
-                        talk.text = "...°í¸¶¿ö. ´öºĞ¿¡ Áø·Î´Â È®½ÇÈ÷ Á¤ÇÑ °Í °°¾Æ. ";
+                        talk.text = "...ê³ ë§ˆì›Œ. ë•ë¶„ì— ì§„ë¡œëŠ” í™•ì‹¤íˆ ì •í•œ ê²ƒ ê°™ì•„. ";
                     else if (choose_num == 2)
                     {
-                        talk.text = "...¹¹? ±×·³ ¼³¸¶ Áö±İ±îÁö ÇØÁØ ¸»Àº ´Ù Áø½ÉÀÌ\n¾Æ´Ï¶ó°ÅÁşÀÌ¿´¾î? ¾îÀÌ°¡ ¾ø³×.\nÇĞ±³¿¡¼­ Àß¸®°í Æò»ı °ÅÁö·Î »ì¾Æ¶ó.";
+                        talk.text = "...ë­? ê·¸ëŸ¼ ì„¤ë§ˆ ì§€ê¸ˆê¹Œì§€ í•´ì¤€ ë§ì€ ë‹¤ ì§„ì‹¬ì´\nì•„ë‹ˆë¼ê±°ì§“ì´ì˜€ì–´? ì–´ì´ê°€ ì—†ë„¤.\ní•™êµì—ì„œ ì˜ë¦¬ê³  í‰ìƒ ê±°ì§€ë¡œ ì‚´ì•„ë¼.";
                         value2 = false;
                         olivia = 31;
                         Invoke("End_talk", 2.5f);
                     }
                     else if (choose_num == 3)
-                        talk.text = "±×°Å °á±¹ ³ë·ÂÇÏ¶ó´Â ¼Ò¸®Áö?\nÁøÂ¥ Â¥Áõ³ª´Âµ¥, Æ²¸° ¸»Àº ¾Æ´Ï±ä ÇØ. ";
+                        talk.text = "ê·¸ê±° ê²°êµ­ ë…¸ë ¥í•˜ë¼ëŠ” ì†Œë¦¬ì§€?\nì§„ì§œ ì§œì¦ë‚˜ëŠ”ë°, í‹€ë¦° ë§ì€ ì•„ë‹ˆê¸´ í•´. ";
                 }
                 else if (olivia == 30)
                 {
                     talk.text = "";
                     if (choose_num == 1)
-                        mytalk.text = "±×°Å ´ÙÇàÀÌ³×.\n¸Â´Ù, ³ªÁß¿¡ ´í¼­·Î À¯¸íÇØÁö¸é »çÀÎ Á» ÇØÁà.";
+                        mytalk.text = "ê·¸ê±° ë‹¤í–‰ì´ë„¤.\në§ë‹¤, ë‚˜ì¤‘ì— ëŒ„ì„œë¡œ ìœ ëª…í•´ì§€ë©´ ì‚¬ì¸ ì¢€ í•´ì¤˜.";
                     else if (choose_num == 3)
-                        mytalk.text = "±×·¡. ¾î¶² ÀÏÀÌµç ³ë·ÂÀº ÇÊ¼öÀûÀÌ´Ï±ñ.";
+                        mytalk.text = "ê·¸ë˜. ì–´ë–¤ ì¼ì´ë“  ë…¸ë ¥ì€ í•„ìˆ˜ì ì´ë‹ˆê¹.";
                 }
                 else if (olivia == 31)
                 {
                     mytalk.text = "";
                     if (choose_num == 1)
-                        talk.text = "±×°Ç ¹¹... °í¹ÎÇØ º¼°Ô.\n¾Æ, ¿À´Ã ¾à¼ÓÀÌ ÀÖ¾úÁö.³ª ÀÌ¸¸ °£´Ù!";
+                        talk.text = "ê·¸ê±´ ë­... ê³ ë¯¼í•´ ë³¼ê²Œ.\nì•„, ì˜¤ëŠ˜ ì•½ì†ì´ ìˆì—ˆì§€.ë‚˜ ì´ë§Œ ê°„ë‹¤!";
                     else if (choose_num == 3)
-                        talk.text = "ÃæºĞÈ÷ ¾Ë°í ÀÖ¾î. Çä ¸Â´Ù.\n¿À´Ã Ä£±¸¶û Ãã ¿¬½ÀÇÏ±â·Î ¾à¼Ó Àâ¾Ò¾ú´Âµ¥.\n³ª ÀÌ¸¸ °¡º¼°Ô! ";
+                        talk.text = "ì¶©ë¶„íˆ ì•Œê³  ìˆì–´. í—‰ ë§ë‹¤.\nì˜¤ëŠ˜ ì¹œêµ¬ë‘ ì¶¤ ì—°ìŠµí•˜ê¸°ë¡œ ì•½ì† ì¡ì•˜ì—ˆëŠ”ë°.\në‚˜ ì´ë§Œ ê°€ë³¼ê²Œ! ";
                     value2 = false;
                     Invoke("End_talk", 2.5f);
                 }
@@ -598,62 +1072,62 @@ public class Talk : MonoBehaviour
                     if (GetComponent<State>().mental_3 >= 36 && GetComponent<State>().friendship_3 >= 36)
                         olivia = 38;
                     else
-                        talk.text = "ÀÌ°Ô ¸¶Áö¸· »ó´ãÀÎ°¡?";
+                        talk.text = "ì´ê²Œ ë§ˆì§€ë§‰ ìƒë‹´ì¸ê°€?";
                 }
                 else if (olivia == 33)
                 {
                     talk.text = "";
-                    mytalk.text = "±×·¸³×. ½Ã°£ Âü »¡¶ó.";
+                    mytalk.text = "ê·¸ë ‡ë„¤. ì‹œê°„ ì°¸ ë¹¨ë¼.";
                 }
                 else if (olivia == 34)
                 {
-                    talk.text = "ÀÖÀİ¾Æ. ³ª ¿ª½Ã ´í¼­°¡ µÇ·Á°í. »ó´ã ´öºĞÀÎÁø\n¸ô¶óµµ ¸¶À½ ¿ÏÀüÈ÷ ¸Ô¾ú¾î.";
+                    talk.text = "ìˆì–ì•„. ë‚˜ ì—­ì‹œ ëŒ„ì„œê°€ ë˜ë ¤ê³ . ìƒë‹´ ë•ë¶„ì¸ì§„\nëª°ë¼ë„ ë§ˆìŒ ì™„ì „íˆ ë¨¹ì—ˆì–´.";
                     mytalk.text = "";
                 }
                 else if (olivia == 35)
-                    talk.text = "Áø·Î °°Àº °Å ÇÑ ¹øµµ »ı°¢ÇØº» Àû ¾ø¾ú´Âµ¥ ½Å±âÇÏ´Ù.\n³»ÀÏµµ ¿Àµğ¼Ç ÀÖ´Ù.";
+                    talk.text = "ì§„ë¡œ ê°™ì€ ê±° í•œ ë²ˆë„ ìƒê°í•´ë³¸ ì  ì—†ì—ˆëŠ”ë° ì‹ ê¸°í•˜ë‹¤.\në‚´ì¼ë„ ì˜¤ë””ì…˜ ìˆë‹¤.";
                 else if (olivia == 36)
                 {
                     talk.text = "";
-                    mytalk.text = "¹ú½á? ²ŞÀ» Á¤ÇÑ °Ç ÁÁÁö¸¸ ¿Àµğ¼ÇÀº ³Ê¹«\nÀÌ¸£Áö ¾Ê³ª. ¿¬½ÀÀº ÃæºĞÈ÷ Çß¾î?";
+                    mytalk.text = "ë²Œì¨? ê¿ˆì„ ì •í•œ ê±´ ì¢‹ì§€ë§Œ ì˜¤ë””ì…˜ì€ ë„ˆë¬´\nì´ë¥´ì§€ ì•Šë‚˜. ì—°ìŠµì€ ì¶©ë¶„íˆ í–ˆì–´?";
                 }
                 else if (olivia == 37)
                 {
-                    talk.text = "¹¹·¡. ÀÎ»ıÀº ½ÇÀüÀÌ¾ß. °è½ï ÀÜ¼Ò¸® ÇÒ °Å¸é °¡º»´Ù\nÀß ÀÖ°í. Ãë¾÷ÇÏ¸é ¾ó±¼ ºñÃß·¯ ¿Ã°Ô!";
+                    talk.text = "ë­ë˜. ì¸ìƒì€ ì‹¤ì „ì´ì•¼. ê³„ì™ ì”ì†Œë¦¬ í•  ê±°ë©´ ê°€ë³¸ë‹¤\nì˜ ìˆê³ . ì·¨ì—…í•˜ë©´ ì–¼êµ´ ë¹„ì¶”ëŸ¬ ì˜¬ê²Œ!";
                     mytalk.text = "";
                     GetComponent<State>().olivia_ending = 2;
                     value2 = false;
                     Invoke("End_talk", 2.5f);
                 }
                 else if (olivia == 38)
-                    talk.text = "ÀÌ°Ô ¸¶Áö¸· »ó´ãÀÎ°¡?";
+                    talk.text = "ì´ê²Œ ë§ˆì§€ë§‰ ìƒë‹´ì¸ê°€?";
                 else if (olivia == 39)
                 {
                     talk.text = "";
-                    mytalk.text = "±×·¸³×. ½Ã°£ Âü »¡¶ó.";
+                    mytalk.text = "ê·¸ë ‡ë„¤. ì‹œê°„ ì°¸ ë¹¨ë¼.";
                 }
                 else if (olivia == 40)
                 {
-                    talk.text = "³ª, ¾ÕÀ¸·Î À¯¸íÇÑ ´í¼­°¡ µÇ±â À§ÇØ¼­ ³ë·ÂÇÏ·Á°í.";
+                    talk.text = "ë‚˜, ì•ìœ¼ë¡œ ìœ ëª…í•œ ëŒ„ì„œê°€ ë˜ê¸° ìœ„í•´ì„œ ë…¸ë ¥í•˜ë ¤ê³ .";
                     mytalk.text = "";
                 }
                 else if (olivia == 41)
-                    talk.text = "Ãã ·¹½¼µµ ¹Ş±â·Î Çß¾î!\n»ç½Ç ¹Ù·Î ¿Àµğ¼ÇÀ» º¼±î »ı°¢µµ Çß¾ú´Âµ¥.";
+                    talk.text = "ì¶¤ ë ˆìŠ¨ë„ ë°›ê¸°ë¡œ í–ˆì–´!\nì‚¬ì‹¤ ë°”ë¡œ ì˜¤ë””ì…˜ì„ ë³¼ê¹Œ ìƒê°ë„ í–ˆì—ˆëŠ”ë°.";
                 else if (olivia == 42)
-                    talk.text = "¿¬½ÀÇÏ¸é ÇÒ¼ö·Ï ³­ ¾ÆÁ÷\nºÎÁ·ÇÑ Á¡ÀÌ ¸¹´õ¶ó°í?";
+                    talk.text = "ì—°ìŠµí•˜ë©´ í• ìˆ˜ë¡ ë‚œ ì•„ì§\në¶€ì¡±í•œ ì ì´ ë§ë”ë¼ê³ ?";
                 else if (olivia == 43)
-                    talk.text = "ÀÌ·¸°Ô ²ÙÁØÈ÷ ÇÏ´Ù º¸¸é ¼º°øÇÒ ¼ö ÀÖ°ÚÁö.";
+                    talk.text = "ì´ë ‡ê²Œ ê¾¸ì¤€íˆ í•˜ë‹¤ ë³´ë©´ ì„±ê³µí•  ìˆ˜ ìˆê² ì§€.";
                 else if (olivia == 44)
                 {
                     talk.text = "";
-                    mytalk.text = "¸ÚÀÖ´Â ¸¶À½°¡ÁüÀÌ¾ß. ¾ÕÀ¸·Îµµ ±×·¸°Ô¸¸ ÇÏ¸é µÇ°Ú´Â °É.\n±×¸®°í ¸¸¾à ÈÄ¿¡ º» ¿Àµğ¼Ç¿¡ ¶³¾îÁö´õ¶óµµ...";
+                    mytalk.text = "ë©‹ìˆëŠ” ë§ˆìŒê°€ì§ì´ì•¼. ì•ìœ¼ë¡œë„ ê·¸ë ‡ê²Œë§Œ í•˜ë©´ ë˜ê² ëŠ” ê±¸.\nê·¸ë¦¬ê³  ë§Œì•½ í›„ì— ë³¸ ì˜¤ë””ì…˜ì— ë–¨ì–´ì§€ë”ë¼ë„...";
                 }
                 else if (olivia == 45)
-                    mytalk.text = "³Ê¹« »ó½ÉÇÏÁö ¸¶. ³ë·ÂÀº ¹İµå½Ã ¹è½ÅÇÏÁö ¾ÊÀ¸´Ï±î,\n²À ºûÀ» º¸°Ô µÉ °É.";
-                else if (olivia == 44)
+                    mytalk.text = "ë„ˆë¬´ ìƒì‹¬í•˜ì§€ ë§ˆ. ë…¸ë ¥ì€ ë°˜ë“œì‹œ ë°°ì‹ í•˜ì§€ ì•Šìœ¼ë‹ˆê¹Œ,\nê¼­ ë¹›ì„ ë³´ê²Œ ë  ê±¸.";
+                else if (olivia == 46)
                 {
                     mytalk.text = "";
-                    talk.text = "±×·¡. ¿ø·¡¿´À¸¸é Â¥Áõ ³µÀ» ¸»ÀÌ±ä ÇØµµ\n¿À´ÃÀº Á» ±¦Âú°Ô µé¸®³×. ÀÀ¿ø °í¸¶¿ö.";
+                    talk.text = "ê·¸ë˜. ì›ë˜ì˜€ìœ¼ë©´ ì§œì¦ ë‚¬ì„ ë§ì´ê¸´ í•´ë„\nì˜¤ëŠ˜ì€ ì¢€ ê´œì°®ê²Œ ë“¤ë¦¬ë„¤. ì‘ì› ê³ ë§ˆì›Œ.";
                     GetComponent<State>().olivia_ending = 3;
                     value2 = false;
                     Invoke("End_talk", 2.5f);
