@@ -1439,7 +1439,10 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 155aa7e (final)
   m_GameObject: {fileID: 341749083}
   m_CullTransparentMesh: 1
 --- !u!1 &355187156
@@ -1585,6 +1588,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4298426239591592, guid: 5c2334af47df6454c9e2eaadbfaa2cb0, type: 3}
   m_PrefabInstance: {fileID: 1480947558}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> parent of 155aa7e (final)
+=======
 >>>>>>> parent of 155aa7e (final)
 --- !u!1001 &404412179
 PrefabInstance:
@@ -7272,7 +7278,10 @@ Transform:
   m_PrefabInstance: {fileID: 1590772617}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 155aa7e (final)
 --- !u!1 &1616127898
 GameObject:
   m_ObjectHideFlags: 0
@@ -7418,6 +7427,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616127898}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
+>>>>>>> parent of 155aa7e (final)
+=======
 >>>>>>> parent of 155aa7e (final)
 --- !u!1001 &1618872546
 PrefabInstance:
