@@ -284,6 +284,7 @@ public class Talk : MonoBehaviour
                 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 else if(tiara == 21)
                 {
                     talk.text = "ê·¸ëƒ¥ ë­, ì¹¨ëŒ€ì— ëˆ„ì›Œì„œ ì‹œê°„ì„ ë³´ë‚´ìš”. \në…¸ëž˜ë‚˜ ë“¤ìœ¼ë©´ì„œ.";
@@ -772,6 +773,13 @@ public class Talk : MonoBehaviour
             {
 
 >>>>>>> parent of 155aa7e (final)
+=======
+
+            }
+            else if(GetComponent<State>().join_student == 2)
+            {
+
+>>>>>>> parent of 155aa7e (final)
             }
             else if(GetComponent<State>().join_student == 3)
             {
@@ -1141,10 +1149,15 @@ public class Talk : MonoBehaviour
                 else if (olivia == 45)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     mytalk.text = "ë„ˆë¬´ ìƒì‹¬í•˜ì§€ ë§ˆ. ë…¸ë ¥ì€ ë°˜ë“œì‹œ ë°°ì‹ í•˜ì§€ ì•Šìœ¼ë‹ˆê¹Œ,\nê¼­ ë¹›ì„ ë³´ê²Œ ë  ê±¸.";
                 else if (olivia == 46)
 =======
                     mytalk.text = "ï¿½Ê¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ýµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½,\nï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½.";
+                else if (olivia == 44)
+>>>>>>> parent of 155aa7e (final)
+=======
+                    mytalk.text = "³Ê¹« »ó½ÉÇÏÁö ¸¶. ³ë·ÂÀº ¹Ýµå½Ã ¹è½ÅÇÏÁö ¾ÊÀ¸´Ï±î,\n²À ºûÀ» º¸°Ô µÉ °É.";
                 else if (olivia == 44)
 >>>>>>> parent of 155aa7e (final)
 =======
